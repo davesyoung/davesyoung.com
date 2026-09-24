@@ -67,7 +67,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0 4vw 0 4vw;
+      padding: 0 4vw;
     }
     .header-brand {
       display: flex;
@@ -97,40 +97,46 @@
       color: var(--accent-gold);
     }
 
-    /* Full-Bleed Split Hero (50vw / 50vw) */
+    /* Full-Bleed Split Hero (Zero Space Below Portrait) */
     .hero-split {
       display: flex;
-      width: 100vw;
+      width: 100%;
       min-height: 100vh;
+      align-items: stretch;
+      margin: 0;
+      padding: 0;
     }
     .hero-image-col {
-      flex: 0 0 50vw;
-      width: 50vw;
-      height: 100vh;
-      min-height: 850px;
+      flex: 0 0 50%;
+      width: 50%;
       position: relative;
-      background: #f0f3f3;
       overflow: hidden;
+      display: flex;
+      align-self: stretch;
+      margin: 0;
+      padding: 0;
     }
     .hero-image-col img.portrait {
       width: 100%;
       height: 100%;
+      min-height: 100%;
       object-fit: cover;
       object-position: center 15%;
       display: block;
     }
     .hero-content-col {
-      flex: 0 0 50vw;
-      width: 50vw;
-      padding: 170px 5vw 60px 5vw;
+      flex: 0 0 50%;
+      width: 50%;
+      padding: 160px 4vw 45px 4vw;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
       background: #ffffff;
+      margin: 0;
     }
 
     h1.hero-title {
-      font-size: clamp(40px, 4.2vw, 59px);
+      font-size: clamp(38px, 4.1vw, 59px);
       font-weight: 300;
       line-height: 1em;
       color: var(--text-dark);
@@ -166,7 +172,7 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 0.95rem;
+      gap: 0.85rem;
     }
     .hero-bullets li {
       font-size: 16px;
@@ -179,16 +185,17 @@
       font-weight: 400;
     }
 
-    /* Full-Bleed Pale Sage Help Section (50vw / 50vw) */
+    /* Full-Bleed Pale Sage Help Section */
     section.section-help {
       background-color: var(--bg-sage-light);
-      width: 100vw;
-      padding: 5.5rem 5vw;
+      width: 100%;
+      padding: 5.5rem 4vw;
+      margin: 0;
     }
     .help-wrap {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 5vw;
+      gap: 4.5vw;
       width: 100%;
     }
     .section-title-bar {
@@ -228,17 +235,18 @@
       font-weight: 400;
     }
 
-    /* Full-Bleed Dark Slate Services Section (33.3vw each) */
+    /* Full-Bleed Dark Slate Services Section */
     section.section-services {
       background-color: var(--bg-slate-dark);
       color: var(--text-slate-body);
-      width: 100vw;
-      padding: 5.5rem 5vw 6.5rem 5vw;
+      width: 100%;
+      padding: 5.5rem 4vw 6.5rem 4vw;
+      margin: 0;
     }
     .services-wrap {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 4vw;
+      gap: 3.5vw;
       width: 100%;
     }
     .service-col {
@@ -282,14 +290,15 @@
       color: var(--text-slate-body);
     }
 
-    /* Full-Bleed Experience Section (Two 50vw Halves) */
+    /* Full-Bleed Experience Section */
     section.section-experience {
       background-color: var(--bg-white);
-      width: 100vw;
-      padding: 6rem 0 3rem 0;
+      width: 100%;
+      padding: 5.5rem 0 3rem 0;
+      margin: 0;
     }
     .exp-header-wrap {
-      padding: 0 5vw 3.5rem 5vw;
+      padding: 0 4vw 3rem 4vw;
     }
     h2.exp-main-title {
       font-size: 42px;
@@ -313,15 +322,15 @@
 
     .exp-grid {
       display: grid;
-      grid-template-columns: 50vw 50vw;
-      width: 100vw;
+      grid-template-columns: 50% 50%;
+      width: 100%;
     }
     .exp-item {
       display: grid;
-      grid-template-columns: 45% 55%;
-      padding: 3rem 3.5vw 4rem 3.5vw;
+      grid-template-columns: 190px 1fr;
+      padding: 2.5rem 3vw 3.5rem 3vw;
       align-items: start;
-      gap: 1.5vw;
+      gap: 1.5rem;
     }
     .exp-visual-box {
       position: relative;
@@ -365,22 +374,25 @@
       color: var(--text-muted);
     }
 
-    /* Full-Bleed Contact Section (50vw Photo / 50vw Gray Box, Flush to Footer) */
+    /* Full-Bleed Contact Section (Flush to Left, Flush to Bottom, Vertically Centered) */
     section.section-contact {
-      width: 100vw;
+      width: 100%;
       display: grid;
-      grid-template-columns: 50vw 50vw;
+      grid-template-columns: 50% 50%;
       margin: 0;
       padding: 0;
       border: none;
-      background: transparent;
+      background-color: var(--bg-contact-gray);
+      align-items: stretch;
     }
     .contact-photo-box {
-      width: 50vw;
-      height: 354px;
+      width: 100%;
+      height: 100%;
+      min-height: 354px;
       margin: 0;
       padding: 0;
       overflow: hidden;
+      display: flex;
     }
     .contact-photo-box img {
       width: 100%;
@@ -392,13 +404,14 @@
     }
     .contact-content-box {
       background-color: var(--bg-contact-gray); /* Exact Wix #F2F2F2 */
-      width: 50vw;
-      height: 354px;
+      width: 100%;
+      height: 100%;
+      min-height: 354px;
       margin: 0;
-      padding: 40px 6vw 45px 5vw;
+      padding: 3rem 5vw 3rem 4vw;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
+      justify-content: center; /* True Vertical Centering */
     }
     .contact-content-box h2 {
       font-size: 24px;
@@ -438,7 +451,7 @@
       color: var(--text-muted);
     }
 
-    /* Full-Bleed Slim Charcoal Footer */
+    /* Slim Charcoal Footer */
     footer.site-footer {
       background-color: var(--bg-footer);
       color: rgba(255, 255, 255, 0.7);
@@ -447,11 +460,11 @@
       font-size: 14px;
       font-weight: 300;
       margin: 0;
-      width: 100vw;
+      width: 100%;
       border: none;
     }
 
-    /* Responsive Mobile Breakpoints */
+    /* Mobile Adaptability */
     @media (max-width: 900px) {
       header.site-header { padding: 0 1.5rem; }
       nav.header-nav { display: none; }
@@ -461,7 +474,6 @@
       h1.hero-title { font-size: 38px; }
       
       section.section-help, section.section-services, section.section-experience, footer.site-footer {
-        width: 100%;
         padding-left: 1.5rem;
         padding-right: 1.5rem;
       }
@@ -482,14 +494,12 @@
       }
       section.section-contact {
         grid-template-columns: 1fr;
-        width: 100%;
       }
       .contact-photo-box {
         width: 100%;
         height: 280px;
       }
       .contact-content-box {
-        width: 100%;
         height: auto;
         padding: 3rem 1.5rem;
       }
@@ -516,7 +526,7 @@
     </nav>
   </header>
 
-  <!-- Full-Bleed Hero (50vw / 50vw) -->
+  <!-- Full-Bleed Hero (Stretches to Eliminate White Space Below) -->
   <div class="hero-split" id="strategy">
     <div class="hero-image-col">
       <img class="portrait" src="davesyoung.jpg" alt="Dave S Young" fetchpriority="high" />
@@ -620,7 +630,7 @@
     </div>
   </section>
 
-  <!-- Full-Bleed Experience Section (50vw Halves) -->
+  <!-- Full-Bleed Experience Section -->
   <section class="section-experience" id="experience">
     <div class="exp-header-wrap">
       <h2 class="exp-main-title">Experience</h2>
@@ -801,7 +811,7 @@
     </div>
   </section>
 
-  <!-- Full-Bleed Contact Section (50vw Chrysalis / 50vw #F2F2F2, Flush to Footer) -->
+  <!-- Full-Bleed Contact Section (Flush to Left, Flush to Footer, Vertically Centered) -->
   <section class="section-contact" id="contact">
     <div class="contact-photo-box">
       <img src="45d210_1fdd623132e54832b2dc7564e2883f4d~mv2.avif" alt="Chrysalis" loading="lazy" />
