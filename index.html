@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dave S Young | Service Design + Strategy</title>
+  <meta name="description" content="Coaching co-founders, CEOs, and VPs of Design to articulate narrative of purpose, align cross-functional teams, and build customer-obsessed service strategies." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f1115;
+      --surface: #181b21;
+      --surface-hover: #22262e;
+      --text: #f0f2f5;
+      --muted: #9ba3af;
+      --accent: #4e95ff;
+      --accent-soft: rgba(78, 149, 255, 0.12);
+      --border: #2a2f3a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      line-height: 1.65;
+      padding: 0 1.5rem;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 0 6rem 0;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 0 3rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 4rem;
+    }
+    .nav-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: #fff;
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    
+    header.hero {
+      margin-bottom: 4.5rem;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      margin-bottom: 1.25rem;
+    }
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 3rem;
+      font-weight: 600;
+      line-height: 1.15;
+      color: #ffffff;
+      margin-bottom: 1.25rem;
+    }
+    .hero-lead {
+      font-size: 1.35rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+      max-width: 760px;
+    }
+    .quick-creds {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-top: 1.5rem;
+    }
+    .cred-tag {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: #d1d5db;
+      font-size: 0.85rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 6px;
+    }
+
+    section {
+      margin-top: 5rem;
+    }
+    h2.section-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2rem;
+      color: #fff;
+      margin-bottom: 1.75rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    .help-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .help-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.1rem 1.25rem;
+      font-size: 0.95rem;
+      color: #e5e7eb;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .service-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+    .service-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .service-card h3 {
+      font-size: 1.3rem;
+      color: #fff;
+      margin-bottom: 0.75rem;
+    }
+    .service-meta {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 0.25rem 0.65rem;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+    }
+
+    .experience-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .exp-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem;
+    }
+    .exp-card h3 {
+      font-size: 1.2rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+    .exp-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .contact-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 3rem;
+      text-align: center;
+      margin-top: 5rem;
+    }
+    .contact-box h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.9rem 2.25rem;
+      border-radius: 999px;
+      margin-top: 1.5rem;
+      transition: opacity 0.2s;
+    }
+    .btn:hover { opacity: 0.9; }
+
+    footer {
+      margin-top: 5rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2.35rem; }
+      .help-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <a href="#" class="nav-brand">Dave S Young</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <header class="hero" id="about">
+      <span class="badge">Service Design + Business Strategy</span>
+      <h1>Dave Young = zeal + experience.</h1>
+      <p class="hero-lead">
+        I coach co-founders, CEOs, and VPs of Design to help them better articulate a narrative of purpose and vision for maximum impact. Through stakeholder interviews and collaborative workshops, I help cross-functional teams break down silos, leverage customer obsession, and prioritize incremental roadmaps to accomplish their business strategy.
+      </p>
+      <div class="quick-creds">
+        <span class="cred-tag">Google (Maps, Docs, Slides, Drive, Gmail)</span>
+        <span class="cred-tag">Uber (Uber for Business & Support Strategy)</span>
+        <span class="cred-tag">MyFitnessPal (Acquired by Under Armour)</span>
+        <span class="cred-tag">Zoodles (Acquired by HTC)</span>
+        <span class="cred-tag">Hover Platform</span>
+        <span class="cred-tag">Carnegie Mellon CFA+CS / MHCI</span>
+      </div>
+    </header>
+
+    <section>
+      <h2 class="section-title">How I Can Help</h2>
+      <div class="help-grid">
+        <div class="help-item">✦ Articulate a narrative of purpose that attracts top talent and inspires growth.</div>
+        <div class="help-item">✦ Build high-impact pitch decks that clearly communicate the future vision.</div>
+        <div class="help-item">✦ Make sense of new, complex, and highly ambiguous problem spaces.</div>
+        <div class="help-item">✦ Gather and apply operational insights to sharpen product-market fit.</div>
+        <div class="help-item">✦ Differentiate services from legacy competitors and defend your moat.</div>
+        <div class="help-item">✦ Align stakeholder and customer interests in multi-sided marketplaces.</div>
+        <div class="help-item">✦ Champion smarter investments in foundational platform architecture.</div>
+        <div class="help-item">✦ Break down internal silos and align cross-functional teams on strategy.</div>
+      </div>
+    </section>
+
+    <section id="services">
+      <h2 class="section-title">Engagements & Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <span class="service-meta">Weekly or Monthly Cadence</span>
+          <h3>Advising Co-Founders & Executives</h3>
+          <p>Direct thought partnership with CEOs and co-founders to dissect immediate challenges, evaluate strategic options, and determine the most beneficial path forward after 1–2 initial discovery weeks.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-meta">1–2 Day Workshop · 4–8 Week Engagement</span>
+          <h3>Executive Alignment Workshops</h3>
+          <p>High-growth organizations inevitably struggle with fragmented priorities. These sessions help leadership become "org-agnostic," focusing on company-wide outcomes through customer obsession and humble collaboration.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-meta">1–2 Day Workshop · 4–8 Week Engagement</span>
+          <h3>Service Design Workshops</h3>
+          <p>Connecting the end-to-end journey across digital products, human operations, and real-world logistics. We map how cross-functional teams can deliver meaningful brand experiences that deepen competitive advantage.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2 class="section-title">Select Product Experience</h2>
+      <div class="experience-list">
+        <div class="exp-card">
+          <h3>Google Maps</h3>
+          <p>First full-time designer on a team of 90 engineers across multiple acquisitions. Led UX for editable maps, search results, filtering, business location content, multi-step and draggable routing algorithms, and custom collaborative map creation.</p>
+        </div>
+        <div class="exp-card">
+          <h3>Google Docs & Design Systems</h3>
+          <p>Joined the founding designer and researcher on a team of 30+ engineers. Designed sharing permissions, comments, revision history, and the original unified visual design system rolled out across Docs and Google products.</p>
+        </div>
+        <div class="exp-card">
+          <h3>Google Presentations & Google Drive</h3>
+          <p>Shaped market differentiation around seamless collaboration over polish. Later spearheaded the unified sharing and access model across all Google products, solving complex inheritance and shared folder architecture.</p>
+        </div>
+        <div class="exp-card">
+          <h3>Gmail & Contacts</h3>
+          <p>Focused on contextual productivity to minimize app-switching (smart compose recommendations, preview integrations). Led the turn-around of Google Contacts by building executive alignment metrics ("go/suckscore") and solving complex contact import/merge flows.</p>
+        </div>
+        <div class="exp-card">
+          <h3>Google Trends & Google Moderator</h3>
+          <p>Co-created Google Trends to safely unlock anonymized search insights for researchers. Co-created Google Moderator (Dory), later utilized by the Obama transition team to power the nation’s first live online presidential town hall.</p>
+        </div>
+        <div class="exp-card">
+          <h3>Startups: Zoodles, MyFitnessPal, Uber & Hover</h3>
+          <p>Scaled early childhood platform Zoodles from 300 to 15M users (acquired by HTC). Led product UX at MyFitnessPal through growth from 75M to 150M users (acquired by Under Armour). Designed support strategies and enterprise service design for Uber and platform tools for Hover.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-box" id="contact">
+      <h2>Let’s Discuss Your Next Strategic Move</h2>
+      <p style="color: var(--muted); max-width: 540px; margin: 0 auto;">Whether you are refining product narrative, planning an executive alignment workshop, or navigating complex service design challenges.</p>
+      <a href="mailto:dave@sacret.org" class="btn">Get in Touch</a>
+    </section>
+
+    <footer>
+      <p>© Dave S Young · Berkeley, CA · <a href="https://sacret.org" style="color:inherit; text-decoration: underline;">Sacret LLC</a></p>
+    </footer>
+  </div>
+</body>
+</html>
