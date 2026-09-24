@@ -6,7 +6,7 @@
   <title>Dave S Young - Service Design + Strategy</title>
   <meta name="description" content="Dave Young = zeal + experience. Service Design and Business Strategy consulting for co-founders, CEOs, and VPs of Design." />
 
-  <!-- Exact Wix Futura Fonts -->
+  <!-- Exact Wix Futura Webfonts -->
   <style>
     @font-face {
       font-family: 'futura-lt-w01-light';
@@ -90,7 +90,7 @@
       text-decoration: none;
       color: var(--text-muted);
       font-size: 1.1rem;
-      transition: color 0.2s ease;
+      transition: color 0.15s ease;
     }
     nav.header-nav a:hover,
     nav.header-nav a.active {
@@ -118,7 +118,7 @@
     }
     .hero-content-col {
       flex: 0 0 50%;
-      padding: 4rem 4rem 5rem 4rem;
+      padding: 4.5rem 4rem 5rem 4rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -175,17 +175,17 @@
       font-weight: 400;
     }
 
-    /* Section 1: Pale Sage Help Section */
+    /* Pale Sage Help Section */
     section.section-help {
       background-color: var(--bg-sage-light);
-      padding: 5rem 2rem;
+      padding: 5.5rem 2rem;
     }
     .help-wrap {
       max-width: var(--max-width);
       margin: 0 auto;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 3.5rem;
+      gap: 4rem;
     }
     .section-title-bar {
       margin-bottom: 1.25rem;
@@ -224,11 +224,11 @@
       font-weight: 400;
     }
 
-    /* Section 2: Dark Slate Services Section */
+    /* Dark Slate Services Section */
     section.section-services {
       background-color: var(--bg-slate-dark);
       color: var(--text-slate-body);
-      padding: 5.5rem 2rem 6rem;
+      padding: 5.5rem 2rem 6.5rem;
     }
     .services-wrap {
       max-width: var(--max-width);
@@ -278,10 +278,10 @@
       color: var(--text-slate-body);
     }
 
-    /* Section 3: Experience Section */
+    /* Experience Section (Open Canvas, No Cards) */
     section.section-experience {
       background-color: var(--bg-white);
-      padding: 5.5rem 2rem;
+      padding: 6rem 2rem 4rem;
     }
     .exp-wrap {
       max-width: var(--max-width);
@@ -297,7 +297,7 @@
       font-size: 1.02rem;
       line-height: 1.8;
       color: var(--text-muted);
-      margin-bottom: 3.5rem;
+      margin-bottom: 4rem;
     }
     .exp-subnav a {
       color: var(--text-muted);
@@ -310,54 +310,53 @@
     .exp-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 3rem 2.5rem;
+      gap: 4.5rem 3.5rem;
     }
-    .exp-card {
+    .exp-item {
       display: flex;
-      gap: 1.5rem;
+      gap: 1.75rem;
       align-items: flex-start;
     }
     .exp-visual-box {
-      flex: 0 0 140px;
+      flex: 0 0 180px;
       position: relative;
     }
     .exp-mockup-img {
-      width: 140px;
-      height: 190px;
-      object-fit: cover;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
       display: block;
       border-radius: 4px;
-      background: #fafafa;
     }
     .exp-badge-icon {
       position: absolute;
-      bottom: -15px;
-      left: 10px;
-      width: 48px;
-      height: 48px;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+      bottom: -18px;
+      left: -8px;
+      width: 68px;
+      height: 68px;
+      border-radius: 14px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.14);
       background: #fff;
     }
     .exp-text-box {
       flex: 1;
     }
     .exp-text-box h3 {
-      font-size: 1.45rem;
+      font-size: 1.5rem;
       font-weight: 300;
       color: var(--text-dark);
-      margin-bottom: 0.65rem;
+      margin-bottom: 0.85rem;
     }
     .exp-text-box p {
-      font-size: 1rem;
-      line-height: 1.55;
+      font-size: 1.02rem;
+      line-height: 1.6;
       color: var(--text-muted);
     }
 
-    /* Section 4: Contact / Chrysalis */
+    /* Contact / Chrysalis Section */
     section.section-contact {
       background-color: var(--bg-white);
-      padding: 5rem 2rem 6rem;
+      padding: 6rem 2rem 6.5rem;
       border-top: 1px solid var(--border);
     }
     .contact-wrap {
@@ -365,7 +364,7 @@
       margin: 0 auto;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 3.5rem;
+      gap: 4rem;
       align-items: center;
     }
     .contact-photo-box img {
@@ -375,7 +374,7 @@
       display: block;
     }
     .contact-content-box h2 {
-      font-size: 2rem;
+      font-size: 2.1rem;
       font-weight: 300;
       color: var(--text-muted);
       margin-bottom: 0.5rem;
@@ -387,16 +386,16 @@
       margin-bottom: 1.5rem;
     }
     .contact-content-box p.bio {
-      font-size: 1.08rem;
+      font-size: 1.1rem;
       line-height: 1.6;
       color: var(--text-muted);
-      margin-bottom: 2rem;
+      margin-bottom: 2.25rem;
     }
     .contact-details {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      max-width: 420px;
+      max-width: 400px;
     }
     .contact-details a.email {
       font-size: 1.15rem;
@@ -411,7 +410,7 @@
       color: var(--text-muted);
     }
 
-    /* Footer */
+    /* Dark Charcoal Footer */
     footer.site-footer {
       background-color: var(--bg-footer);
       color: #ffffff;
@@ -430,11 +429,11 @@
       h1.hero-title { font-size: 2.8rem; }
       .help-wrap, .services-wrap, .exp-grid, .contact-wrap {
         grid-template-columns: 1fr;
-        gap: 2.5rem;
+        gap: 3rem;
       }
-      .exp-card { flex-direction: column; }
-      .exp-visual-box { width: 100%; height: auto; }
-      .exp-mockup-img { width: 100%; height: 220px; }
+      .exp-item { flex-direction: column; }
+      .exp-visual-box { width: 220px; }
+      .contact-details { flex-direction: column; gap: 0.5rem; }
     }
   </style>
 </head>
@@ -558,7 +557,7 @@
     </div>
   </section>
 
-  <!-- Experience Section -->
+  <!-- Experience Section (Open, Borderless Layout) -->
   <section class="section-experience" id="experience">
     <div class="exp-wrap">
       <h2 class="exp-main-title">Experience</h2>
@@ -569,7 +568,7 @@
 
       <div class="exp-grid">
         <!-- Google Maps -->
-        <div class="exp-card" id="gmaps">
+        <div class="exp-item" id="gmaps">
           <div class="exp-visual-box">
             <img class="exp-mockup-img" src="45d210_4477b1a5802d4e159ca56eb9fea36e69~mv2.avif" alt="Google Maps" loading="lazy" />
             <img class="exp-badge-icon" src="Maps-icon.avif" alt="Maps icon" loading="lazy" />
@@ -581,7 +580,7 @@
         </div>
 
         <!-- Google Docs -->
-        <div class="exp-card" id="gdocs">
+        <div class="exp-item" id="gdocs">
           <div class="exp-visual-box">
             <img class="exp-mockup-img" src="45d210_9044418ec07543a39dfdd5b224b1d0df~mv2.avif" alt="Google Docs" loading="lazy" />
             <img class="exp-badge-icon" src="docs.avif" alt="Docs icon" loading="lazy" />
@@ -593,7 +592,7 @@
         </div>
 
         <!-- Google Presentations -->
-        <div class="exp-card" id="gpresentations">
+        <div class="exp-item" id="gpresentations">
           <div class="exp-visual-box">
             <img class="exp-mockup-img" src="45d210_e883d058f918463e8f2165d1d9f91ab1~mv2.avif" alt="Google Presentations" loading="lazy" />
             <img class="exp-badge-icon" src="Presentations-icon.avif" alt="Presentations icon" loading="lazy" />
@@ -605,7 +604,7 @@
         </div>
 
         <!-- Google Drive -->
-        <div class="exp-card" id="gdrive">
+        <div class="exp-item" id="gdrive">
           <div class="exp-visual-box">
             <img class="exp-mockup-img" src="45d210_5de8beac771d4866bec71f056eb92f8e~mv2.avif" alt="Google Drive" loading="lazy" />
             <img class="exp-badge-icon" src="Drive-icon.avif" alt="Drive icon" loading="lazy" />
@@ -617,7 +616,7 @@
         </div>
 
         <!-- Gmail -->
-        <div class="exp-card" id="gmail">
+        <div class="exp-item" id="gmail">
           <div class="exp-visual-box">
             <img class="exp-mockup-img" src="45d210_a4e3a19d274b418a84f97a4a5109735e~mv2.avif" alt="Gmail" loading="lazy" />
             <img class="exp-badge-icon" src="Presentations-icon (1).avif" alt="Gmail icon" loading="lazy" />
@@ -629,7 +628,7 @@
         </div>
 
         <!-- Google Contacts -->
-        <div class="exp-card" id="gcontacts">
+        <div class="exp-item" id="gcontacts">
           <div class="exp-visual-box">
             <img class="exp-mockup-img" src="45d210_327d7ce91bb047d4ab53f09d6acb2d02~mv2.avif" alt="Google Contacts" loading="lazy" />
             <img class="exp-badge-icon" src="Google_Contacts_icon_svg.avif" alt="Contacts icon" loading="lazy" />
@@ -641,7 +640,7 @@
         </div>
 
         <!-- Google Trends -->
-        <div class="exp-card" id="gtrends">
+        <div class="exp-item" id="gtrends">
           <div class="exp-visual-box">
             <img class="exp-mockup-img" src="45d210_bf806afdaeaa4987af4da93d35496550~mv2.avif" alt="Google Trends" loading="lazy" />
             <img class="exp-badge-icon" src="Trends-icon (1).avif" alt="Trends icon" loading="lazy" />
@@ -653,7 +652,7 @@
         </div>
 
         <!-- Google Moderator -->
-        <div class="exp-card" id="gmoderator">
+        <div class="exp-item" id="gmoderator">
           <div class="exp-visual-box">
             <img class="exp-mockup-img" src="45d210_379aa093378d4c5ca3590ab7c5be34a4~mv2.avif" alt="Google Moderator" loading="lazy" />
             <img class="exp-badge-icon" src="Moderator-icon.avif" alt="Dory icon" loading="lazy" />
@@ -665,7 +664,7 @@
         </div>
 
         <!-- Zoodles -->
-        <div class="exp-card" id="zoodles">
+        <div class="exp-item" id="zoodles">
           <div class="exp-visual-box">
             <img class="exp-mockup-img" src="45d210_46a320260d4a4a6cac0f2640c8755aa4~mv2.avif" alt="Zoodles Kid Mode" loading="lazy" />
             <img class="exp-badge-icon" src="KidMode-icon (1).avif" alt="KidMode icon" loading="lazy" />
@@ -677,7 +676,7 @@
         </div>
 
         <!-- MyFitnessPal -->
-        <div class="exp-card" id="mfp">
+        <div class="exp-item" id="mfp">
           <div class="exp-visual-box">
             <img class="exp-mockup-img" src="45d210_3f2d830e358f4358a7f2313fb75ab6fb~mv2.avif" alt="MyFitnessPal" loading="lazy" />
             <img class="exp-badge-icon" src="Moderator-icon (1).avif" alt="Under Armour icon" loading="lazy" />
@@ -689,7 +688,7 @@
         </div>
 
         <!-- Uber for Business -->
-        <div class="exp-card" id="uber-b2b">
+        <div class="exp-item" id="uber-b2b">
           <div class="exp-visual-box">
             <img class="exp-mockup-img" src="45d210_b56368e743a9468c95f17042503ddfc5~mv2.avif" alt="Uber for Business" loading="lazy" />
             <img class="exp-badge-icon" src="Uber-icon.avif" alt="Uber icon" loading="lazy" />
@@ -701,7 +700,7 @@
         </div>
 
         <!-- Uber Support Strategy -->
-        <div class="exp-card" id="uber-support">
+        <div class="exp-item" id="uber-support">
           <div class="exp-visual-box">
             <img class="exp-mockup-img" src="45d210_7c6036b45b934b149366088d410e15d5~mv2.avif" alt="Uber Support Strategy" loading="lazy" />
             <img class="exp-badge-icon" src="Uber-icon (1).avif" alt="Uber icon" loading="lazy" />
@@ -713,7 +712,7 @@
         </div>
 
         <!-- Uber Workshops -->
-        <div class="exp-card" id="uber-workshops">
+        <div class="exp-item" id="uber-workshops">
           <div class="exp-visual-box">
             <img class="exp-mockup-img" src="45d210_2167d0cdefbf415f863f9c75f7b633d7~mv2.avif" alt="Uber Workshops" loading="lazy" />
             <img class="exp-badge-icon" src="Uber-icon (2).avif" alt="Uber icon" loading="lazy" />
@@ -725,7 +724,7 @@
         </div>
 
         <!-- Hover -->
-        <div class="exp-card" id="hover">
+        <div class="exp-item" id="hover">
           <div class="exp-visual-box">
             <img class="exp-mockup-img" src="45d210_95d0f573f66549959bdee2491983094c~mv2.avif" alt="Hover" loading="lazy" />
             <img class="exp-badge-icon" src="Hover-icon (1).avif" alt="Hover icon" loading="lazy" />
@@ -739,7 +738,7 @@
     </div>
   </section>
 
-  <!-- Section 4: Contact / How Can I Help -->
+  <!-- Contact / Chrysalis Section -->
   <section class="section-contact" id="contact">
     <div class="contact-wrap">
       <div class="contact-photo-box">
@@ -759,13 +758,13 @@
     </div>
   </section>
 
-  <!-- Dark Footer -->
+  <!-- Dark Charcoal Footer -->
   <footer class="site-footer">
-    <p>© <span id="current-year">2026</span> by Dave Young</p>
+    <p>© <span id="year">2026</span> by Dave Young</p>
   </footer>
 
   <script>
-    document.getElementById('current-year').textContent = new Date().getFullYear();
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
