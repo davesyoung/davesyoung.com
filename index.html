@@ -11,7 +11,7 @@
   <style>
     :root {
       --bg: #ffffff;
-      --text-dark: #2b2b2b;
+      --text-dark: #222222;
       --text-body: #414746;
       --text-muted: #72827f;
       --accent-gold: #FEAA16;
@@ -40,19 +40,19 @@
       left: 0;
       width: 100%;
       height: 74px;
-      background: rgba(255, 255, 255, 0.94);
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(10px);
       z-index: 1000;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 0 2.5rem;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
     }
     .header-brand {
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.65rem;
       text-decoration: none;
       color: var(--text-dark);
       font-size: 1.15rem;
@@ -62,7 +62,8 @@
     .header-brand img {
       width: 24px;
       height: 24px;
-      border-radius: 3px;
+      border-radius: 4px;
+      display: block;
     }
     nav.header-nav {
       display: flex;
@@ -73,7 +74,7 @@
       color: var(--text-muted);
       font-size: 1rem;
       font-weight: 300;
-      transition: color 0.2s ease;
+      transition: color 0.15s ease;
     }
     nav.header-nav a:hover {
       color: var(--accent-gold);
@@ -88,14 +89,14 @@
     .hero-photo-col {
       flex: 0 0 50%;
       position: relative;
-      background: #f0f3f3;
+      background: #eef2f2;
       overflow: hidden;
     }
     .hero-photo-col img.portrait {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center 25%;
+      object-position: center 20%;
       display: block;
     }
     .hero-content-col {
@@ -110,10 +111,10 @@
     h1.main-title {
       font-size: 3.4rem;
       font-weight: 300;
-      line-height: 1.08;
+      line-height: 1.1;
       color: var(--text-dark);
       letter-spacing: -0.02em;
-      margin-bottom: 0.65rem;
+      margin-bottom: 0.75rem;
     }
     .tagline {
       font-size: 1.35rem;
@@ -130,10 +131,13 @@
       align-items: center;
       gap: 0.45rem;
       text-decoration: underline;
+      text-underline-offset: 3px;
       font-size: 1.05rem;
       font-weight: 400;
       color: var(--text-dark);
       margin-bottom: 2.25rem;
+      width: fit-content;
+      transition: color 0.15s ease;
     }
     .resume-btn img {
       width: 20px;
@@ -159,7 +163,7 @@
       font-weight: 500;
     }
 
-    /* Shared Section Styling */
+    /* Shared Section Layouts */
     section {
       padding: 5.5rem 2rem;
     }
@@ -184,7 +188,7 @@
       margin-top: 0.65rem;
     }
 
-    /* Section: I'm Here to Help / I Can Help You */
+    /* Section: Help */
     .two-col-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -206,7 +210,7 @@
       line-height: 1.55;
       color: var(--text-muted);
       position: relative;
-      padding-left: 1.3rem;
+      padding-left: 1.35rem;
     }
     .help-bullet-list li::before {
       content: "•";
@@ -278,10 +282,10 @@
       background: #ffffff;
       border: 1px solid var(--border);
       border-radius: 6px;
-      padding: 1rem 1.5rem;
+      padding: 1.1rem 1.5rem;
       margin-bottom: 3.5rem;
       font-size: 0.98rem;
-      line-height: 1.8;
+      line-height: 1.85;
       color: var(--text-muted);
     }
     .experience-jump-nav strong {
@@ -300,7 +304,7 @@
     .case-studies-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 3rem;
+      gap: 2.5rem;
     }
     .case-item {
       display: flex;
@@ -309,11 +313,11 @@
       border: 1px solid var(--border);
       border-radius: 8px;
       padding: 1.5rem;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
     .case-item:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
     }
     .case-visual-col {
       flex: 0 0 135px;
@@ -331,11 +335,11 @@
       background: #f7f9f9;
     }
     .case-app-badge {
-      width: 44px;
-      height: 44px;
+      width: 46px;
+      height: 46px;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-      margin-top: -22px;
+      margin-top: -23px;
       position: relative;
       z-index: 2;
       background: #fff;
@@ -355,7 +359,7 @@
       color: var(--text-body);
     }
 
-    /* Section: Contact / How Can I Help */
+    /* Section: Contact */
     .contact-section {
       text-align: center;
       background: var(--surface-light);
@@ -447,7 +451,7 @@
   <!-- Sticky Header -->
   <header class="site-header">
     <a href="https://www.linkedin.com/in/davesyoung/" target="_blank" rel="noopener" class="header-brand">
-      <img src="new-linkedin-logo-white-black-png_edited.avif" onerror="this.src='https://static.wixstatic.com/media/45d210_ab423d2953284987a1a3f947f018b5bb~mv2.png/v1/fill/w_50,h_50,al_c,q_85/new-linkedin-logo-white-black-png_edited.png'" alt="LinkedIn" />
+      <img src="new-linkedin-logo-white-black-png_edited.avif" alt="LinkedIn" />
       <span>Dave S Young</span>
     </a>
     <nav class="header-nav">
@@ -461,7 +465,7 @@
   <!-- Split Screen Hero -->
   <div class="hero-container" id="strategy">
     <div class="hero-photo-col">
-      <img class="portrait" src="davesyoung.jpg" onerror="this.src='https://static.wixstatic.com/media/45d210_0179f44db289442faef2ba2ddb96d91d~mv2.jpg/v1/fill/w_1000,h_1300,al_c,q_85/45d210_0179f44db289442faef2ba2ddb96d91d~mv2.jpg'" alt="Dave S Young" />
+      <img class="portrait" src="davesyoung.jpg" alt="Dave S Young" fetchpriority="high" />
     </div>
     <div class="hero-content-col">
       <h1 class="main-title">Service Design +<br>Business Strategy</h1>
@@ -469,8 +473,8 @@
         <a href="https://www.linkedin.com/in/davesyoung/" target="_blank" rel="noopener">Dave Young</a> = zeal + experience.
       </p>
       
-      <a href="resume.pdf" target="_blank" class="resume-btn">
-        <img src="Resume.avif" onerror="this.src='https://static.wixstatic.com/media/45d210_a7e2355c713d47ac8051c926e5bf1ca5~mv2.png/v1/fill/w_46,h_42,al_c,q_85/Resume.png'" alt="Download" />
+      <a href="DaveYoung-Resume-2026.pdf" target="_blank" class="resume-btn">
+        <img src="Resume.avif" alt="Download" />
         <span>Resume</span>
       </a>
 
@@ -589,8 +593,8 @@
         <!-- Google Maps -->
         <div class="case-item" id="gmaps">
           <div class="case-visual-col">
-            <img class="case-mockup-img" src="45d210_4477b1a5802d4e159ca56eb9fea36e69~mv2.avif" onerror="this.src='https://static.wixstatic.com/media/45d210_4477b1a5802d4e159ca56eb9fea36e69~mv2.jpg/v1/fill/w_300,h_400,al_c,q_80/45d210_4477b1a5802d4e159ca56eb9fea36e69~mv2.jpg'" alt="Google Maps" />
-            <img class="case-app-badge" src="Maps-icon.avif" onerror="this.src='https://static.wixstatic.com/media/45d210_d3345ce2ea7247758ea09e9f658ff90e~mv2.png/v1/fill/w_84,h_84,al_c,q_85/Maps-icon.png'" alt="Maps icon" />
+            <img class="case-mockup-img" src="45d210_4477b1a5802d4e159ca56eb9fea36e69~mv2.avif" alt="Google Maps" loading="lazy" />
+            <img class="case-app-badge" src="Maps-icon.avif" alt="Maps icon" loading="lazy" />
           </div>
           <div class="case-content-col">
             <h3>Google Maps</h3>
@@ -601,8 +605,8 @@
         <!-- Google Docs -->
         <div class="case-item" id="gdocs">
           <div class="case-visual-col">
-            <img class="case-mockup-img" src="45d210_9044418ec07543a39dfdd5b224b1d0df~mv2.avif" onerror="this.src='https://static.wixstatic.com/media/45d210_9044418ec07543a39dfdd5b224b1d0df~mv2.jpg/v1/fill/w_300,h_400,al_c,q_80/45d210_9044418ec07543a39dfdd5b224b1d0df~mv2.jpg'" alt="Google Docs" />
-            <img class="case-app-badge" src="docs.avif" onerror="this.src='https://static.wixstatic.com/media/45d210_a2ff410dae9545ec92f59239d6e49221~mv2.png/v1/fill/w_84,h_84,al_c,q_85/docs.png'" alt="Docs icon" />
+            <img class="case-mockup-img" src="45d210_9044418ec07543a39dfdd5b224b1d0df~mv2.avif" alt="Google Docs" loading="lazy" />
+            <img class="case-app-badge" src="docs.avif" alt="Docs icon" loading="lazy" />
           </div>
           <div class="case-content-col">
             <h3>Google Docs</h3>
@@ -613,8 +617,8 @@
         <!-- Google Presentations -->
         <div class="case-item" id="gpresentations">
           <div class="case-visual-col">
-            <img class="case-mockup-img" src="45d210_e883d058f918463e8f2165d1d9f91ab1~mv2.avif" onerror="this.src='https://static.wixstatic.com/media/45d210_e883d058f918463e8f2165d1d9f91ab1~mv2.jpg/v1/fill/w_300,h_400,al_c,q_80/45d210_e883d058f918463e8f2165d1d9f91ab1~mv2.jpg'" alt="Google Presentations" />
-            <img class="case-app-badge" src="Presentations-icon.avif" onerror="this.src='https://static.wixstatic.com/media/45d210_868ea5b106ae4c18aa07584160a0f9b6~mv2.png/v1/fill/w_84,h_84,al_c,q_85/Presentations-icon.png'" alt="Presentations icon" />
+            <img class="case-mockup-img" src="45d210_e883d058f918463e8f2165d1d9f91ab1~mv2.avif" alt="Google Presentations" loading="lazy" />
+            <img class="case-app-badge" src="Presentations-icon.avif" alt="Presentations icon" loading="lazy" />
           </div>
           <div class="case-content-col">
             <h3>Google Presentations</h3>
@@ -625,8 +629,8 @@
         <!-- Google Drive -->
         <div class="case-item" id="gdrive">
           <div class="case-visual-col">
-            <img class="case-mockup-img" src="45d210_5de8beac771d4866bec71f056eb92f8e~mv2.avif" onerror="this.src='https://static.wixstatic.com/media/45d210_5de8beac771d4866bec71f056eb92f8e~mv2.jpg/v1/fill/w_300,h_400,al_c,q_80/45d210_5de8beac771d4866bec71f056eb92f8e~mv2.jpg'" alt="Google Drive" />
-            <img class="case-app-badge" src="Drive-icon.avif" onerror="this.src='https://static.wixstatic.com/media/45d210_13bfafeee66e4093836371bca4f5dfad~mv2.png/v1/fill/w_84,h_84,al_c,q_85/Drive-icon.png'" alt="Drive icon" />
+            <img class="case-mockup-img" src="45d210_5de8beac771d4866bec71f056eb92f8e~mv2.avif" alt="Google Drive" loading="lazy" />
+            <img class="case-app-badge" src="Drive-icon.avif" alt="Drive icon" loading="lazy" />
           </div>
           <div class="case-content-col">
             <h3>Google Drive</h3>
@@ -637,8 +641,8 @@
         <!-- Gmail -->
         <div class="case-item" id="gmail">
           <div class="case-visual-col">
-            <img class="case-mockup-img" src="45d210_a4e3a19d274b418a84f97a4a5109735e~mv2.avif" onerror="this.src='https://static.wixstatic.com/media/45d210_a4e3a19d274b418a84f97a4a5109735e~mv2.jpg/v1/fill/w_300,h_400,al_c,q_80/45d210_a4e3a19d274b418a84f97a4a5109735e~mv2.jpg'" alt="Gmail" />
-            <img class="case-app-badge" src="Presentations-icon (1).avif" onerror="this.src='https://static.wixstatic.com/media/45d210_e62fc0be74b740aa912808c49e7b2aa1~mv2.png/v1/fill/w_84,h_84,al_c,q_85/Gmail-icon.png'" alt="Gmail icon" />
+            <img class="case-mockup-img" src="45d210_a4e3a19d274b418a84f97a4a5109735e~mv2.avif" alt="Gmail" loading="lazy" />
+            <img class="case-app-badge" src="Presentations-icon (1).avif" alt="Gmail icon" loading="lazy" />
           </div>
           <div class="case-content-col">
             <h3>Gmail</h3>
@@ -649,8 +653,8 @@
         <!-- Google Contacts -->
         <div class="case-item" id="gcontacts">
           <div class="case-visual-col">
-            <img class="case-mockup-img" src="45d210_327d7ce91bb047d4ab53f09d6acb2d02~mv2.avif" onerror="this.src='https://static.wixstatic.com/media/45d210_327d7ce91bb047d4ab53f09d6acb2d02~mv2.jpg/v1/fill/w_300,h_400,al_c,q_80/45d210_327d7ce91bb047d4ab53f09d6acb2d02~mv2.jpg'" alt="Google Contacts" />
-            <img class="case-app-badge" src="Google_Contacts_icon_svg.avif" onerror="this.src='https://static.wixstatic.com/media/45d210_c8065ad0c0ea4dc4b8ae01c51db3f053~mv2.png/v1/fill/w_84,h_84,al_c,q_85/Contacts.png'" alt="Contacts icon" />
+            <img class="case-mockup-img" src="45d210_327d7ce91bb047d4ab53f09d6acb2d02~mv2.avif" alt="Google Contacts" loading="lazy" />
+            <img class="case-app-badge" src="Google_Contacts_icon_svg.avif" alt="Contacts icon" loading="lazy" />
           </div>
           <div class="case-content-col">
             <h3>Google Contacts</h3>
@@ -661,8 +665,8 @@
         <!-- Google Trends -->
         <div class="case-item" id="gtrends">
           <div class="case-visual-col">
-            <img class="case-mockup-img" src="45d210_bf806afdaeaa4987af4da93d35496550~mv2.avif" onerror="this.src='https://static.wixstatic.com/media/45d210_bf806afdaeaa4987af4da93d35496550~mv2.jpg/v1/fill/w_300,h_400,al_c,q_80/45d210_bf806afdaeaa4987af4da93d35496550~mv2.jpg'" alt="Google Trends" />
-            <img class="case-app-badge" src="Trends-icon (1).avif" onerror="this.src='https://static.wixstatic.com/media/45d210_e622b79a528646b5a3299c855a8dc08e~mv2.png/v1/fill/w_84,h_84,al_c,q_85/Trends-icon.png'" alt="Trends icon" />
+            <img class="case-mockup-img" src="45d210_bf806afdaeaa4987af4da93d35496550~mv2.avif" alt="Google Trends" loading="lazy" />
+            <img class="case-app-badge" src="Trends-icon (1).avif" alt="Trends icon" loading="lazy" />
           </div>
           <div class="case-content-col">
             <h3>Google Trends</h3>
@@ -673,8 +677,8 @@
         <!-- Google Moderator -->
         <div class="case-item" id="gmoderator">
           <div class="case-visual-col">
-            <img class="case-mockup-img" src="45d210_379aa093378d4c5ca3590ab7c5be34a4~mv2.avif" onerror="this.src='https://static.wixstatic.com/media/45d210_379aa093378d4c5ca3590ab7c5be34a4~mv2.jpg/v1/fill/w_300,h_400,al_c,q_80/45d210_379aa093378d4c5ca3590ab7c5be34a4~mv2.jpg'" alt="Google Moderator" />
-            <img class="case-app-badge" src="Moderator-icon.avif" onerror="this.src='https://static.wixstatic.com/media/45d210_9206b0d9154a4f8aa4c330f81d115e51~mv2.png/v1/fill/w_84,h_84,al_c,q_85/Dory.png'" alt="Dory icon" />
+            <img class="case-mockup-img" src="45d210_379aa093378d4c5ca3590ab7c5be34a4~mv2.avif" alt="Google Moderator" loading="lazy" />
+            <img class="case-app-badge" src="Moderator-icon.avif" alt="Dory icon" loading="lazy" />
           </div>
           <div class="case-content-col">
             <h3>Google Moderator</h3>
@@ -685,8 +689,8 @@
         <!-- Zoodles -->
         <div class="case-item" id="zoodles">
           <div class="case-visual-col">
-            <img class="case-mockup-img" src="45d210_46a320260d4a4a6cac0f2640c8755aa4~mv2.avif" onerror="this.src='https://static.wixstatic.com/media/45d210_46a320260d4a4a6cac0f2640c8755aa4~mv2.jpg/v1/fill/w_300,h_400,al_c,q_80/45d210_46a320260d4a4a6cac0f2640c8755aa4~mv2.jpg'" alt="Zoodles Kid Mode" />
-            <img class="case-app-badge" src="KidMode-icon (1).avif" onerror="this.src='https://static.wixstatic.com/media/45d210_816999a0ef574ee48d1e289bf59bb0cb~mv2.png/v1/fill/w_84,h_84,al_c,q_85/KidMode-icon.png'" alt="KidMode icon" />
+            <img class="case-mockup-img" src="45d210_46a320260d4a4a6cac0f2640c8755aa4~mv2.avif" alt="Zoodles Kid Mode" loading="lazy" />
+            <img class="case-app-badge" src="KidMode-icon (1).avif" alt="KidMode icon" loading="lazy" />
           </div>
           <div class="case-content-col">
             <h3>Zoodles: Kid Mode™</h3>
@@ -697,8 +701,8 @@
         <!-- MyFitnessPal -->
         <div class="case-item" id="mfp">
           <div class="case-visual-col">
-            <img class="case-mockup-img" src="45d210_3f2d830e358f4358a7f2313fb75ab6fb~mv2.avif" onerror="this.src='https://static.wixstatic.com/media/45d210_3f2d830e358f4358a7f2313fb75ab6fb~mv2.jpg/v1/fill/w_300,h_400,al_c,q_80/45d210_3f2d830e358f4358a7f2313fb75ab6fb~mv2.jpg'" alt="MyFitnessPal" />
-            <img class="case-app-badge" src="Moderator-icon (1).avif" onerror="this.src='https://static.wixstatic.com/media/45d210_7918a56eb7224fa9a03c80918b958897~mv2.png/v1/fill/w_84,h_84,al_c,q_85/UnderArmour.png'" alt="Under Armour icon" />
+            <img class="case-mockup-img" src="45d210_3f2d830e358f4358a7f2313fb75ab6fb~mv2.avif" alt="MyFitnessPal" loading="lazy" />
+            <img class="case-app-badge" src="Moderator-icon (1).avif" alt="Under Armour icon" loading="lazy" />
           </div>
           <div class="case-content-col">
             <h3>MyFitnessPal</h3>
@@ -709,8 +713,8 @@
         <!-- Uber for Business -->
         <div class="case-item" id="uber-b2b">
           <div class="case-visual-col">
-            <img class="case-mockup-img" src="45d210_b56368e743a9468c95f17042503ddfc5~mv2.avif" onerror="this.src='https://static.wixstatic.com/media/45d210_b56368e743a9468c95f17042503ddfc5~mv2.jpg/v1/fill/w_300,h_400,al_c,q_80/45d210_b56368e743a9468c95f17042503ddfc5~mv2.jpg'" alt="Uber for Business" />
-            <img class="case-app-badge" src="Uber-icon.avif" onerror="this.src='https://static.wixstatic.com/media/45d210_02a63ad1362d495780d6b9945324ec15~mv2.png/v1/fill/w_84,h_84,al_c,q_85/Uber-icon.png'" alt="Uber icon" />
+            <img class="case-mockup-img" src="45d210_b56368e743a9468c95f17042503ddfc5~mv2.avif" alt="Uber for Business" loading="lazy" />
+            <img class="case-app-badge" src="Uber-icon.avif" alt="Uber icon" loading="lazy" />
           </div>
           <div class="case-content-col">
             <h3>Uber For Business</h3>
@@ -721,8 +725,8 @@
         <!-- Uber Support Strategy -->
         <div class="case-item" id="uber-support">
           <div class="case-visual-col">
-            <img class="case-mockup-img" src="45d210_7c6036b45b934b149366088d410e15d5~mv2.avif" onerror="this.src='https://static.wixstatic.com/media/45d210_7c6036b45b934b149366088d410e15d5~mv2.jpg/v1/fill/w_300,h_400,al_c,q_80/45d210_7c6036b45b934b149366088d410e15d5~mv2.jpg'" alt="Uber Support Strategy" />
-            <img class="case-app-badge" src="Uber-icon.avif" onerror="this.src='https://static.wixstatic.com/media/45d210_02a63ad1362d495780d6b9945324ec15~mv2.png/v1/fill/w_84,h_84,al_c,q_85/Uber-icon.png'" alt="Uber icon" />
+            <img class="case-mockup-img" src="45d210_7c6036b45b934b149366088d410e15d5~mv2.avif" alt="Uber Support Strategy" loading="lazy" />
+            <img class="case-app-badge" src="Uber-icon (1).avif" alt="Uber icon" loading="lazy" />
           </div>
           <div class="case-content-col">
             <h3>Uber Support Strategy</h3>
@@ -733,8 +737,8 @@
         <!-- Uber Workshops -->
         <div class="case-item" id="uber-workshops">
           <div class="case-visual-col">
-            <img class="case-mockup-img" src="45d210_2167d0cdefbf415f863f9c75f7b633d7~mv2.avif" onerror="this.src='https://static.wixstatic.com/media/45d210_2167d0cdefbf415f863f9c75f7b633d7~mv2.jpg/v1/fill/w_300,h_400,al_c,q_80/45d210_2167d0cdefbf415f863f9c75f7b633d7~mv2.jpg'" alt="Uber Workshops" />
-            <img class="case-app-badge" src="Uber-icon.avif" onerror="this.src='https://static.wixstatic.com/media/45d210_02a63ad1362d495780d6b9945324ec15~mv2.png/v1/fill/w_84,h_84,al_c,q_85/Uber-icon.png'" alt="Uber icon" />
+            <img class="case-mockup-img" src="45d210_2167d0cdefbf415f863f9c75f7b633d7~mv2.avif" alt="Uber Workshops" loading="lazy" />
+            <img class="case-app-badge" src="Uber-icon (2).avif" alt="Uber icon" loading="lazy" />
           </div>
           <div class="case-content-col">
             <h3>Uber Workshops</h3>
@@ -745,8 +749,8 @@
         <!-- Hover -->
         <div class="case-item" id="hover">
           <div class="case-visual-col">
-            <img class="case-mockup-img" src="45d210_95d0f573f66549959bdee2491983094c~mv2.avif" onerror="this.src='https://static.wixstatic.com/media/45d210_95d0f573f66549959bdee2491983094c~mv2.jpg/v1/fill/w_300,h_400,al_c,q_80/45d210_95d0f573f66549959bdee2491983094c~mv2.jpg'" alt="Hover" />
-            <img class="case-app-badge" src="Hover-icon (1).avif" onerror="this.src='https://static.wixstatic.com/media/45d210_b6c43fe1d1ee47d5bc2c8e3ca2d951ce~mv2.png/v1/fill/w_84,h_84,al_c,q_85/Hover-icon.png'" alt="Hover icon" />
+            <img class="case-mockup-img" src="45d210_95d0f573f66549959bdee2491983094c~mv2.avif" alt="Hover" loading="lazy" />
+            <img class="case-app-badge" src="Hover-icon (1).avif" alt="Hover icon" loading="lazy" />
           </div>
           <div class="case-content-col">
             <h3>Hover</h3>
@@ -758,10 +762,10 @@
     </div>
   </section>
 
-  <!-- Section: How can I help? / Contact -->
+  <!-- Section: Contact -->
   <section class="contact-section" id="contact">
     <div class="content-wrap">
-      <img class="chrysalis-img" src="45d210_1fdd623132e54832b2dc7564e2883f4d~mv2.avif" onerror="this.src='https://static.wixstatic.com/media/45d210_1fdd623132e54832b2dc7564e2883f4d~mv2.jpg/v1/fill/w_440,h_290,al_c,q_80/45d210_1fdd623132e54832b2dc7564e2883f4d~mv2.jpg'" alt="Chrysalis" />
+      <img class="chrysalis-img" src="45d210_1fdd623132e54832b2dc7564e2883f4d~mv2.avif" alt="Chrysalis" loading="lazy" />
       <h2 class="contact-title">How can I help?</h2>
       <p class="contact-desc">
         I'm currently advising a few companies while exploring new opportunities to help CEOs and Co-Founders inspire their team's best work.
