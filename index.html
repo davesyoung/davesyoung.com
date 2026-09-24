@@ -53,7 +53,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Fixed Translucent Header (Matches Wix 80% Alpha) */
+    /* Fixed Translucent Header (Wix 80% Alpha) */
     header.site-header {
       position: fixed;
       top: 0;
@@ -76,7 +76,6 @@
       text-decoration: none;
       color: var(--text-dark);
       font-size: 20px;
-      letter-spacing: normal;
     }
     .header-brand img {
       width: 25px;
@@ -91,14 +90,14 @@
       text-decoration: none;
       color: var(--text-dark);
       font-size: 18px;
-      transition: color 0.2s ease;
+      transition: color 0.15s ease;
     }
     nav.header-nav a:hover,
     nav.header-nav a.active {
       color: var(--accent-gold);
     }
 
-    /* Split Screen Hero - Portrait starts at top: 0 behind header */
+    /* Split Screen Hero */
     .hero-split {
       display: flex;
       min-height: 100vh;
@@ -121,7 +120,6 @@
     }
     .hero-content-col {
       flex: 0 0 50%;
-      /* 170px top padding ensures heading sits cleanly below header without collision */
       padding: 170px 40px 60px 40px;
       display: flex;
       flex-direction: column;
@@ -134,12 +132,10 @@
       font-weight: 300;
       line-height: 1em;
       color: var(--text-dark);
-      letter-spacing: normal;
       margin-bottom: 20px;
     }
     .hero-tagline {
       font-size: 24px;
-      line-height: normal;
       color: var(--text-dark);
       margin-bottom: 15px;
     }
@@ -287,7 +283,7 @@
     /* Experience Section (Open Canvas, No Cards) */
     section.section-experience {
       background-color: var(--bg-white);
-      padding: 6rem 2rem 3rem;
+      padding: 6rem 2rem 5rem;
     }
     .exp-wrap {
       max-width: var(--max-width);
@@ -334,7 +330,7 @@
       object-fit: contain;
       display: block;
     }
-    /* Transparent App Badges - No Background, No Border, No Shadow */
+    /* Transparent App Badges */
     .exp-badge-icon {
       position: absolute;
       bottom: -20px;
@@ -363,36 +359,51 @@
       color: var(--text-muted);
     }
 
-    /* Contact / Chrysalis Section */
+    /* Contact / Chrysalis Strip (Directly Abuts Footer) */
     section.section-contact {
       background-color: var(--bg-white);
-      padding: 5rem 2rem 4rem;
-      border-top: 1px solid var(--border);
+      padding: 0;
+      margin: 0;
+      border: none;
     }
     .contact-wrap {
       max-width: var(--max-width);
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
+      grid-template-columns: 490px 490px;
+      align-items: end;
+    }
+    .contact-photo-box {
+      width: 490px;
+      height: 354px;
+      overflow: hidden;
+      display: block;
     }
     .contact-photo-box img {
       width: 100%;
-      max-width: 440px;
+      height: 100%;
+      object-fit: cover;
       display: block;
+      border-radius: 0;
+    }
+    .contact-content-box {
+      padding: 40px 0 45px 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 354px;
     }
     .contact-content-box h2 {
       font-size: 24px;
       font-weight: 300;
       color: var(--text-muted);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.35rem;
     }
     .contact-rule {
       width: 45px;
       height: 2px;
       background: var(--line-sage);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
     }
     .contact-content-box p.bio {
       font-size: 16px;
@@ -404,7 +415,7 @@
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      max-width: 400px;
+      max-width: 380px;
     }
     .contact-details a.email {
       font-size: 16px;
@@ -419,27 +430,40 @@
       color: var(--text-muted);
     }
 
-    /* Slim Charcoal Footer (Matches Wix Exact Styling) */
+    /* Slim Charcoal Footer */
     footer.site-footer {
       background-color: var(--bg-footer);
       color: rgba(255, 255, 255, 0.7);
-      padding: 18px 2rem;
+      padding: 16px 2rem;
       text-align: center;
       font-size: 14px;
       font-weight: 300;
+      margin: 0;
+      border: none;
     }
 
     /* Responsive Mobile Breakpoints */
-    @media (max-width: 900px) {
+    @media (max-width: 980px) {
       header.site-header { padding: 0 1.5rem; }
       nav.header-nav { display: none; }
       .hero-split { flex-direction: column; }
       .hero-image-col { height: 440px; flex: none; }
       .hero-content-col { padding: 3rem 1.5rem; flex: none; }
       h1.hero-title { font-size: 38px; }
-      .help-wrap, .services-wrap, .exp-grid, .contact-wrap {
+      .help-wrap, .services-wrap, .exp-grid {
         grid-template-columns: 1fr;
         gap: 3rem;
+      }
+      .contact-wrap {
+        grid-template-columns: 1fr;
+      }
+      .contact-photo-box {
+        width: 100%;
+        height: 280px;
+      }
+      .contact-content-box {
+        height: auto;
+        padding: 2.5rem 1.5rem 3rem;
       }
       .exp-item { flex-direction: column; }
       .exp-visual-box { width: 220px; }
@@ -463,7 +487,7 @@
     </nav>
   </header>
 
-  <!-- Hero Split Screen (Photo reaches top: 0 behind header) -->
+  <!-- Hero Split Screen -->
   <div class="hero-split" id="strategy">
     <div class="hero-image-col">
       <img class="portrait" src="davesyoung.jpg" alt="Dave S Young" fetchpriority="high" />
@@ -748,7 +772,7 @@
     </div>
   </section>
 
-  <!-- Contact / Chrysalis Section -->
+  <!-- Contact / Chrysalis Strip (Flush with Footer) -->
   <section class="section-contact" id="contact">
     <div class="contact-wrap">
       <div class="contact-photo-box">
@@ -762,13 +786,13 @@
         </p>
         <div class="contact-details">
           <a class="email" href="mailto:davesyoung@gmail.com">davesyoung@gmail.com</a>
-          <span class="location">Berkeley, CA</span>
+          <span class="location">Berekely, CA</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Slim Charcoal Footer -->
+  <!-- Dark Charcoal Footer -->
   <footer class="site-footer">
     <p>© <span id="year">2026</span> by Dave Young</p>
   </footer>
