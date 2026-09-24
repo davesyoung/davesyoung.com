@@ -5,31 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dave S Young - Service Design + Strategy</title>
   <meta name="description" content="Dave Young = zeal + experience. Service Design and Business Strategy consulting for co-founders, CEOs, and VPs of Design." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+  <!-- Exact Wix Futura Fonts -->
   <style>
+    @font-face {
+      font-family: 'futura-lt-w01-light';
+      font-style: normal;
+      font-weight: 300;
+      src: url('https://static.parastorage.com/fonts/v2/8e5b5cbc-6ad9-49f7-aee7-4e5133c3ee4d/v1/futura-lt-w01-light.woff2') format('woff2');
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'futura-lt-w01-book';
+      font-style: normal;
+      font-weight: 400;
+      src: url('https://static.parastorage.com/fonts/v2/790166f1-b347-4f16-8a29-f0c4931a7c35/v1/futura-lt-w01-book.woff2') format('woff2');
+      font-display: swap;
+    }
+
     :root {
-      --bg: #ffffff;
-      --text-dark: #222222;
+      --bg-white: #ffffff;
+      --bg-sage-light: #D5E1DF;
+      --bg-slate-dark: #72827F;
+      --bg-footer: #424746;
+      
+      --text-dark: #2B2B2B;
       --text-body: #414746;
-      --text-muted: #72827f;
+      --text-muted: #72827F;
+      --text-slate-light: #D5E1DF;
+      --text-slate-body: #A3B8B4;
+      
       --accent-gold: #FEAA16;
-      --accent-line: #a3b8b4;
-      --border: #e8eded;
-      --surface-light: #f7f9f9;
-      --surface-card: #fbfcfc;
-      --max-width: 1100px;
+      --line-sage: #72827F;
+      --line-slate: #A3B8B4;
+      
+      --max-width: 980px;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
-      background-color: var(--bg);
+      background-color: var(--bg-white);
       color: var(--text-body);
-      font-family: 'Jost', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: 'futura-lt-w01-light', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       font-weight: 300;
-      line-height: 1.6;
+      line-height: 1.5;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -40,14 +60,13 @@
       left: 0;
       width: 100%;
       height: 74px;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
       z-index: 1000;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0 2.5rem;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
+      padding: 0 3.5rem;
     }
     .header-brand {
       display: flex;
@@ -55,44 +74,42 @@
       gap: 0.65rem;
       text-decoration: none;
       color: var(--text-dark);
-      font-size: 1.15rem;
-      font-weight: 400;
+      font-size: 1.25rem;
       letter-spacing: -0.01em;
     }
     .header-brand img {
-      width: 24px;
-      height: 24px;
-      border-radius: 4px;
+      width: 25px;
+      height: 25px;
       display: block;
     }
     nav.header-nav {
       display: flex;
-      gap: 2rem;
+      gap: 2.25rem;
     }
     nav.header-nav a {
       text-decoration: none;
       color: var(--text-muted);
-      font-size: 1rem;
-      font-weight: 300;
-      transition: color 0.15s ease;
+      font-size: 1.1rem;
+      transition: color 0.2s ease;
     }
-    nav.header-nav a:hover {
-      color: var(--accent-gold);
+    nav.header-nav a:hover,
+    nav.header-nav a.active {
+      color: var(--text-dark);
     }
 
     /* Split Screen Hero */
-    .hero-container {
+    .hero-split {
       display: flex;
       min-height: 100vh;
       padding-top: 74px;
     }
-    .hero-photo-col {
+    .hero-image-col {
       flex: 0 0 50%;
       position: relative;
-      background: #eef2f2;
+      background: #f0f3f3;
       overflow: hidden;
     }
-    .hero-photo-col img.portrait {
+    .hero-image-col img.portrait {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -101,348 +118,323 @@
     }
     .hero-content-col {
       flex: 0 0 50%;
-      padding: 4.5rem 4rem 5rem 4rem;
+      padding: 4rem 4rem 5rem 4rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
       background: #ffffff;
     }
 
-    h1.main-title {
-      font-size: 3.4rem;
+    h1.hero-title {
+      font-size: 3.7rem;
       font-weight: 300;
-      line-height: 1.1;
+      line-height: 1.05;
       color: var(--text-dark);
       letter-spacing: -0.02em;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.65rem;
     }
-    .tagline {
-      font-size: 1.35rem;
-      font-weight: 400;
+    .hero-tagline {
+      font-size: 1.5rem;
       color: var(--text-dark);
-      margin-bottom: 1.25rem;
+      margin-bottom: 1rem;
     }
-    .tagline a {
+    .hero-tagline a {
       color: var(--accent-gold);
       text-decoration: underline;
     }
-    .resume-btn {
+    .hero-resume-link {
       display: inline-flex;
       align-items: center;
-      gap: 0.45rem;
+      gap: 0.5rem;
       text-decoration: underline;
       text-underline-offset: 3px;
       font-size: 1.05rem;
-      font-weight: 400;
       color: var(--text-dark);
-      margin-bottom: 2.25rem;
+      margin-bottom: 2.5rem;
       width: fit-content;
-      transition: color 0.15s ease;
     }
-    .resume-btn img {
-      width: 20px;
+    .hero-resume-link img {
+      width: 22px;
       height: 20px;
-    }
-    .resume-btn:hover {
-      color: var(--accent-gold);
     }
 
     .hero-bullets {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 0.95rem;
+      gap: 0.85rem;
     }
     .hero-bullets li {
       font-size: 1.02rem;
       color: var(--text-muted);
-      line-height: 1.48;
+      line-height: 1.45;
     }
     .hero-bullets li strong {
+      font-family: 'futura-lt-w01-book', sans-serif;
       color: var(--text-dark);
-      font-weight: 500;
+      font-weight: 400;
     }
 
-    /* Shared Section Layouts */
-    section {
-      padding: 5.5rem 2rem;
+    /* Section 1: Pale Sage Help Section */
+    section.section-help {
+      background-color: var(--bg-sage-light);
+      padding: 5rem 2rem;
     }
-    .content-wrap {
+    .help-wrap {
       max-width: var(--max-width);
       margin: 0 auto;
-    }
-    .section-header-bar {
-      margin-bottom: 2.5rem;
-    }
-    .section-header-bar h2 {
-      font-size: 1.35rem;
-      font-weight: 400;
-      color: var(--text-dark);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .section-header-bar .accent-bar {
-      width: 55px;
-      height: 2px;
-      background: var(--accent-line);
-      margin-top: 0.65rem;
-    }
-
-    /* Section: Help */
-    .two-col-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 3.5rem;
     }
-    .lead-text {
+    .section-title-bar {
+      margin-bottom: 1.25rem;
+    }
+    .section-title-bar h2 {
       font-size: 1.15rem;
-      line-height: 1.7;
+      font-weight: 400;
+      color: var(--text-muted);
+      letter-spacing: 0.02em;
+    }
+    .accent-rule-sage {
+      width: 60px;
+      height: 2px;
+      background: var(--line-sage);
+      margin-top: 0.5rem;
+    }
+    .help-text-block {
+      font-size: 1.12rem;
+      line-height: 1.6;
       color: var(--text-body);
     }
-    .help-bullet-list {
+    .help-list {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 0.85rem;
+      gap: 0.6rem;
     }
-    .help-bullet-list li {
-      font-size: 1.05rem;
-      line-height: 1.55;
+    .help-list li {
+      font-size: 1.02rem;
+      line-height: 1.6;
       color: var(--text-muted);
-      position: relative;
-      padding-left: 1.35rem;
     }
-    .help-bullet-list li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: var(--accent-gold);
-      font-weight: bold;
-    }
-    .help-bullet-list li strong {
+    .help-list li strong {
+      font-family: 'futura-lt-w01-book', sans-serif;
       color: var(--text-dark);
-      font-weight: 500;
+      font-weight: 400;
     }
 
-    /* Section: Services */
-    .services-bg {
-      background: var(--surface-light);
+    /* Section 2: Dark Slate Services Section */
+    section.section-services {
+      background-color: var(--bg-slate-dark);
+      color: var(--text-slate-body);
+      padding: 5.5rem 2rem 6rem;
     }
-    .services-3col {
+    .services-wrap {
+      max-width: var(--max-width);
+      margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
+      gap: 2.5rem;
     }
-    .service-card {
-      background: #ffffff;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 2.5rem 2rem;
+    .service-col {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
-    .service-card h3 {
-      font-size: 1.25rem;
-      font-weight: 500;
-      color: var(--text-dark);
-      margin-bottom: 0.5rem;
+    .service-col h2 {
+      font-family: 'futura-lt-w01-book', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--text-slate-light);
+      letter-spacing: 0.01em;
     }
-    .service-card .card-bar {
-      width: 45px;
-      height: 2px;
-      background: var(--accent-line);
-      margin-bottom: 1.25rem;
-    }
-    .service-card p.card-desc {
-      font-size: 1rem;
-      line-height: 1.65;
-      color: var(--text-muted);
-      margin-bottom: 2rem;
-    }
-    .service-meta {
-      border-top: 1px solid var(--border);
-      padding-top: 1.2rem;
-    }
-    .service-meta strong {
-      display: block;
-      color: var(--text-dark);
-      font-weight: 500;
-      font-size: 0.95rem;
-    }
-    .service-meta span {
-      display: block;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      margin-top: 0.2rem;
-    }
-
-    /* Section: Experience */
-    .experience-jump-nav {
-      background: #ffffff;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 1.1rem 1.5rem;
-      margin-bottom: 3.5rem;
-      font-size: 0.98rem;
-      line-height: 1.85;
-      color: var(--text-muted);
-    }
-    .experience-jump-nav strong {
-      color: var(--text-dark);
-      font-weight: 500;
-    }
-    .experience-jump-nav a {
-      color: var(--text-body);
-      text-decoration: underline;
-      margin: 0 0.25rem;
-    }
-    .experience-jump-nav a:hover {
-      color: var(--accent-gold);
-    }
-
-    .case-studies-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2.5rem;
-    }
-    .case-item {
-      display: flex;
-      gap: 1.5rem;
-      background: #ffffff;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.5rem;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-    .case-item:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
-    }
-    .case-visual-col {
-      flex: 0 0 135px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-    }
-    .case-mockup-img {
+    .accent-rule-slate {
       width: 100%;
-      height: 190px;
-      object-fit: cover;
-      border-radius: 6px;
-      border: 1px solid rgba(0,0,0,0.06);
-      background: #f7f9f9;
+      height: 2px;
+      background: var(--line-slate);
+      margin: 0.65rem 0 1.25rem 0;
     }
-    .case-app-badge {
-      width: 46px;
-      height: 46px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-      margin-top: -23px;
-      position: relative;
-      z-index: 2;
-      background: #fff;
-    }
-    .case-content-col {
-      flex: 1;
-    }
-    .case-content-col h3 {
-      font-size: 1.25rem;
-      font-weight: 500;
-      color: var(--text-dark);
-      margin-bottom: 0.6rem;
-    }
-    .case-content-col p {
-      font-size: 0.95rem;
-      line-height: 1.6;
-      color: var(--text-body);
-    }
-
-    /* Section: Contact */
-    .contact-section {
-      text-align: center;
-      background: var(--surface-light);
-      border-top: 1px solid var(--border);
-      padding: 6rem 2rem 5rem;
-    }
-    .chrysalis-img {
-      max-width: 220px;
-      border-radius: 8px;
+    .service-col p.desc {
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: var(--text-slate-body);
       margin-bottom: 2rem;
     }
-    .contact-title {
-      font-size: 2.4rem;
+    .service-col .cadence {
+      margin-top: auto;
+      padding-top: 1rem;
+    }
+    .service-col .cadence strong {
+      display: block;
+      font-family: 'futura-lt-w01-book', sans-serif;
+      font-size: 1.02rem;
+      color: var(--text-slate-light);
+      font-weight: 400;
+    }
+    .service-col .cadence span {
+      display: block;
+      font-size: 1.02rem;
+      color: var(--text-slate-body);
+    }
+
+    /* Section 3: Experience Section */
+    section.section-experience {
+      background-color: var(--bg-white);
+      padding: 5.5rem 2rem;
+    }
+    .exp-wrap {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+    h2.exp-main-title {
+      font-size: 2.65rem;
       font-weight: 300;
       color: var(--text-dark);
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
     }
-    .contact-desc {
-      font-size: 1.2rem;
+    .exp-subnav {
+      font-size: 1.02rem;
+      line-height: 1.8;
       color: var(--text-muted);
-      max-width: 680px;
-      margin: 0 auto 2.5rem;
+      margin-bottom: 3.5rem;
     }
-    .email-link {
-      display: inline-block;
-      font-size: 1.35rem;
-      color: var(--accent-gold);
+    .exp-subnav a {
+      color: var(--text-muted);
       text-decoration: underline;
-      font-weight: 400;
-      margin-bottom: 0.5rem;
     }
-    .location-tag {
-      font-size: 1rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
+    .exp-subnav a:hover {
+      color: var(--accent-gold);
     }
 
-    footer.site-footer {
-      border-top: 1px solid var(--border);
-      padding: 2.5rem 2rem;
-      text-align: center;
-      font-size: 0.9rem;
+    .exp-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem 2.5rem;
+    }
+    .exp-card {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+    .exp-visual-box {
+      flex: 0 0 140px;
+      position: relative;
+    }
+    .exp-mockup-img {
+      width: 140px;
+      height: 190px;
+      object-fit: cover;
+      display: block;
+      border-radius: 4px;
+      background: #fafafa;
+    }
+    .exp-badge-icon {
+      position: absolute;
+      bottom: -15px;
+      left: 10px;
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+      background: #fff;
+    }
+    .exp-text-box {
+      flex: 1;
+    }
+    .exp-text-box h3 {
+      font-size: 1.45rem;
+      font-weight: 300;
+      color: var(--text-dark);
+      margin-bottom: 0.65rem;
+    }
+    .exp-text-box p {
+      font-size: 1rem;
+      line-height: 1.55;
       color: var(--text-muted);
-      background: #ffffff;
+    }
+
+    /* Section 4: Contact / Chrysalis */
+    section.section-contact {
+      background-color: var(--bg-white);
+      padding: 5rem 2rem 6rem;
+      border-top: 1px solid var(--border);
+    }
+    .contact-wrap {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+    .contact-photo-box img {
+      width: 100%;
+      max-width: 440px;
+      border-radius: 4px;
+      display: block;
+    }
+    .contact-content-box h2 {
+      font-size: 2rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+    .contact-rule {
+      width: 50px;
+      height: 2px;
+      background: var(--line-sage);
+      margin-bottom: 1.5rem;
+    }
+    .contact-content-box p.bio {
+      font-size: 1.08rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+    .contact-details {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      max-width: 420px;
+    }
+    .contact-details a.email {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      text-decoration: underline;
+    }
+    .contact-details a.email:hover {
+      color: var(--accent-gold);
+    }
+    .contact-details span.location {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+    }
+
+    /* Footer */
+    footer.site-footer {
+      background-color: var(--bg-footer);
+      color: #ffffff;
+      padding: 1.75rem 2rem;
+      text-align: center;
+      font-size: 0.95rem;
     }
 
     /* Responsive Mobile Breakpoints */
-    @media (max-width: 960px) {
-      header.site-header {
-        padding: 0 1.5rem;
-      }
-      nav.header-nav {
-        display: none;
-      }
-      .hero-container {
-        flex-direction: column;
-      }
-      .hero-photo-col {
-        flex: none;
-        height: 480px;
-      }
-      .hero-content-col {
-        flex: none;
-        padding: 3rem 1.75rem;
-      }
-      h1.main-title {
-        font-size: 2.6rem;
-      }
-      .two-col-grid, .services-3col, .case-studies-grid {
+    @media (max-width: 900px) {
+      header.site-header { padding: 0 1.5rem; }
+      nav.header-nav { display: none; }
+      .hero-split { flex-direction: column; }
+      .hero-image-col { height: 440px; flex: none; }
+      .hero-content-col { padding: 3rem 1.5rem; flex: none; }
+      h1.hero-title { font-size: 2.8rem; }
+      .help-wrap, .services-wrap, .exp-grid, .contact-wrap {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 2.5rem;
       }
-      .case-item {
-        flex-direction: column;
-      }
-      .case-visual-col {
-        flex: none;
-        width: 100%;
-      }
-      .case-mockup-img {
-        height: 220px;
-      }
+      .exp-card { flex-direction: column; }
+      .exp-visual-box { width: 100%; height: auto; }
+      .exp-mockup-img { width: 100%; height: 220px; }
     }
   </style>
 </head>
@@ -462,19 +454,19 @@
     </nav>
   </header>
 
-  <!-- Split Screen Hero -->
-  <div class="hero-container" id="strategy">
-    <div class="hero-photo-col">
+  <!-- Hero Split Screen -->
+  <div class="hero-split" id="strategy">
+    <div class="hero-image-col">
       <img class="portrait" src="davesyoung.jpg" alt="Dave S Young" fetchpriority="high" />
     </div>
     <div class="hero-content-col">
-      <h1 class="main-title">Service Design +<br>Business Strategy</h1>
-      <p class="tagline">
+      <h1 class="hero-title">Service Design +<br>Business Strategy</h1>
+      <p class="hero-tagline">
         <a href="https://www.linkedin.com/in/davesyoung/" target="_blank" rel="noopener">Dave Young</a> = zeal + experience.
       </p>
       
-      <a href="DaveYoung-Resume-2026.pdf" target="_blank" class="resume-btn">
-        <img src="Resume.avif" alt="Download" />
+      <a href="DaveYoung-Resume-2026.pdf" target="_blank" class="hero-resume-link">
+        <img src="Resume.avif" alt="Resume" />
         <span>Resume</span>
       </a>
 
@@ -491,296 +483,289 @@
     </div>
   </div>
 
-  <!-- Section: I'm Here to Help / I Can Help You -->
-  <section id="help">
-    <div class="content-wrap two-col-grid">
+  <!-- Pale Sage Help Section -->
+  <section class="section-help" id="help">
+    <div class="help-wrap">
       <div>
-        <div class="section-header-bar">
+        <div class="section-title-bar">
           <h2>I'm here to help</h2>
-          <div class="accent-bar"></div>
+          <div class="accent-rule-sage"></div>
         </div>
-        <p class="lead-text">
+        <p class="help-text-block">
           I coach co-founders, CEOs, and VPs of Design to help them better articulate a narrative of purpose and vision for maximum impact. This is achieved through stakeholder interviews and fun workshops (remote or in-person) to help cross-functional teams break down silos and learn how to leverage each other, service design, and customer obsession. These engagements help your teams work together to identify and prioritize the right incremental roadmap to accomplish your new business strategy.
         </p>
       </div>
 
       <div>
-        <div class="section-header-bar">
+        <div class="section-title-bar">
           <h2>I can help you</h2>
-          <div class="accent-bar"></div>
+          <div class="accent-rule-sage"></div>
         </div>
-        <ul class="help-bullet-list">
-          <li>articulate a <strong>narrative of purpose</strong> that attracts talent and inspires growth</li>
-          <li>make better <strong>pitch decks</strong> to sell the future vision of the company</li>
-          <li>make sense of new and <strong>ambiguous problem spaces</strong></li>
-          <li>gather and apply insights to improve your <strong>product-market fit</strong></li>
-          <li><strong>differentiate</strong> your services from legacy competitors</li>
-          <li>leverage <strong>customer insights</strong> to dig and defend your moat</li>
-          <li>align customer interests in <strong>multi-sided marketplaces</strong></li>
-          <li>champion smarter investments in the foundation of your <strong>platform</strong></li>
-          <li>prioritize an <strong>incremental roadmap</strong> toward your company vision</li>
-          <li>break down internal silos and align <strong>cross-functionally</strong> on strategy</li>
+        <ul class="help-list">
+          <li>• articulate a <strong>narrative of purpose</strong> that attracts talent and inspires growth</li>
+          <li>• make better <strong>pitch decks</strong> to sell the future vision of the company</li>
+          <li>• make sense of new and <strong>ambiguous problem spaces</strong></li>
+          <li>• gather and apply insights to improve your <strong>product-market fit</strong></li>
+          <li>• <strong>differentiate</strong> your services from legacy competitors</li>
+          <li>• leverage <strong>customer insights</strong> to dig and defend your moat</li>
+          <li>• align customer interests in <strong>multi-sided marketplaces</strong></li>
+          <li>• champion smarter investments in the foundation of your <strong>platform</strong></li>
+          <li>• prioritize an <strong>incremental roadmap</strong> toward your company vision</li>
+          <li>• break down internal silos and align <strong>cross-functionally</strong> on strategy</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- Section: Services -->
-  <section class="services-bg" id="services">
-    <div class="content-wrap">
-      <div class="section-header-bar">
-        <h2>Services</h2>
-        <div class="accent-bar"></div>
+  <!-- Dark Slate Services Section -->
+  <section class="section-services" id="services">
+    <div class="services-wrap">
+      <div class="service-col">
+        <div>
+          <h2>Advising Co-Founders</h2>
+          <div class="accent-rule-slate"></div>
+          <p class="desc">I'm able to meet weekly or monthly with CEO's and co-founders to discuss the challenges they are facing, discuss their options, and evaluate which strategy would be most beneficial to them at this time.</p>
+        </div>
+        <div class="cadence">
+          <strong>Weekly or Monthly</strong>
+          <span>After 1-2 weeks with founders</span>
+        </div>
       </div>
-      <div class="services-3col">
-        <div class="service-card">
-          <div>
-            <h3>Advising Co-Founders</h3>
-            <div class="card-bar"></div>
-            <p class="card-desc">I'm able to meet weekly or monthly with CEOs and co-founders to discuss the challenges they are facing, discuss their options, and evaluate which strategy would be most beneficial to them at this time.</p>
-          </div>
-          <div class="service-meta">
-            <strong>Weekly or Monthly</strong>
-            <span>After 1-2 weeks with founders</span>
-          </div>
-        </div>
 
-        <div class="service-card">
-          <div>
-            <h3>Executive Alignment Workshops</h3>
-            <div class="card-bar"></div>
-            <p class="card-desc">High-growth startups inevitably struggle with the familiar challenges of team interests and priorities becoming fragmented and siloed. The executive leadership workshops I've led across many teams at Uber and other companies help folks become more "org-agnostic" focused instead on helping the company succeed through a more humble and customer-obsessed approach.</p>
-          </div>
-          <div class="service-meta">
-            <strong>Workshop is 1-2 days</strong>
-            <span>During 4-8 week engagement.</span>
-          </div>
+      <div class="service-col">
+        <div>
+          <h2>Executive Alignment Workshops</h2>
+          <div class="accent-rule-slate"></div>
+          <p class="desc">High-growth startups inevitably struggle with the familiar challenges of team interests and priorities becoming fragmented and siloed.<br><br>The executive leadership workshops I've led across many teams at Uber and other companies help folks become more "org-agnostic" focused instead on helping the company succeed through a more humble and customer-obsessed approach.</p>
         </div>
+        <div class="cadence">
+          <strong>Workshop is 1-2 days</strong>
+          <span>During 4-8 week engagement.</span>
+        </div>
+      </div>
 
-        <div class="service-card">
-          <div>
-            <h3>Service Design Workshops</h3>
-            <div class="card-bar"></div>
-            <p class="card-desc">Practicing Service Design helps companies understand the marketplace they serve so that they can deliver value in meaningful brand experiences to differentiate their service and deepen their moat. The service design workshops I led at Uber brought cross-functional teams together to look at the end-to-end experience of people brought together by digital services, operations, and real-world challenges.</p>
-          </div>
-          <div class="service-meta">
-            <strong>Workshop is 1-2 days</strong>
-            <span>During 4-8 week engagement.</span>
-          </div>
+      <div class="service-col">
+        <div>
+          <h2>Service Design Workshops</h2>
+          <div class="accent-rule-slate"></div>
+          <p class="desc">Practicing Service Design helps companies understand the marketplace they serve so that they can deliver value in meaningful brand experiences to differentiate their service and deepen their moat.<br><br>The service design workshops I led at Uber brought cross-functional teams together to look at the end-to-end experience of people brought together by digital services, operations, and real-world challenges.</p>
+        </div>
+        <div class="cadence">
+          <strong>Workshop is 1-2 days</strong>
+          <span>During 4-8 week engagement.</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section: Experience -->
-  <section id="experience">
-    <div class="content-wrap">
-      <div class="section-header-bar">
-        <h2 style="font-size: 2.4rem; text-transform: none; letter-spacing: -0.01em;">Experience</h2>
-        <div class="accent-bar" style="width: 80px;"></div>
-      </div>
-
-      <div class="experience-jump-nav">
-        <strong>Google:</strong>
-        <a href="#gmaps">Maps</a>, <a href="#gdocs">Docs</a>, <a href="#gpresentations">Presentations</a>, <a href="#gdrive">Drive</a>, <a href="#gmail">Gmail</a>, <a href="#gcontacts">Contacts</a>, <a href="#gtrends">Trends</a>, <a href="#gmoderator">Moderator</a>
-        <br>
-        <strong>Startups:</strong>
+  <!-- Experience Section -->
+  <section class="section-experience" id="experience">
+    <div class="exp-wrap">
+      <h2 class="exp-main-title">Experience</h2>
+      <p class="exp-subnav">
+        Google: <a href="#gmaps">Maps</a>, <a href="#gdocs">Docs</a>, <a href="#gpresentations">Presentations</a>, <a href="#gdrive">Drive</a>, <a href="#gmail">Gmail</a>, <a href="#gcontacts">Contacts</a>, <a href="#gtrends">Trends</a>, <a href="#gmoderator">Moderator</a><br>
         <a href="#zoodles">Zoodles</a>, <a href="#mfp">MyFitnessPal</a>, <a href="#uber-b2b">Uber for Business</a>, <a href="#uber-support">Support Strategy</a>, <a href="#uber-workshops">Workshops</a>, <a href="#hover">Hover</a>
-      </div>
+      </p>
 
-      <div class="case-studies-grid">
-        
+      <div class="exp-grid">
         <!-- Google Maps -->
-        <div class="case-item" id="gmaps">
-          <div class="case-visual-col">
-            <img class="case-mockup-img" src="45d210_4477b1a5802d4e159ca56eb9fea36e69~mv2.avif" alt="Google Maps" loading="lazy" />
-            <img class="case-app-badge" src="Maps-icon.avif" alt="Maps icon" loading="lazy" />
+        <div class="exp-card" id="gmaps">
+          <div class="exp-visual-box">
+            <img class="exp-mockup-img" src="45d210_4477b1a5802d4e159ca56eb9fea36e69~mv2.avif" alt="Google Maps" loading="lazy" />
+            <img class="exp-badge-icon" src="Maps-icon.avif" alt="Maps icon" loading="lazy" />
           </div>
-          <div class="case-content-col">
+          <div class="exp-text-box">
             <h3>Google Maps</h3>
-            <p>First full-time designer on a team of 90 engineers from multiple acquisitions. Internationalization, geodata creation and curation, editable maps, search results, reviews, filtering, location content, business content, UX goals for direction algorithms, multi-step directions, draggable direction routes, printing, saved places, custom map creation, and collaboration.</p>
+            <p>First full-time designer on team of 90 engineers from multiple acquisitions.<br><br>Internationalization, geodata creation and curation, editable maps, search results, reviews, filtering, location content, business content, UX goals for direction algorithms, multi-step directions, draggable direction routes, printing, saved places, custom map creation and collaboration.</p>
           </div>
         </div>
 
         <!-- Google Docs -->
-        <div class="case-item" id="gdocs">
-          <div class="case-visual-col">
-            <img class="case-mockup-img" src="45d210_9044418ec07543a39dfdd5b224b1d0df~mv2.avif" alt="Google Docs" loading="lazy" />
-            <img class="case-app-badge" src="docs.avif" alt="Docs icon" loading="lazy" />
+        <div class="exp-card" id="gdocs">
+          <div class="exp-visual-box">
+            <img class="exp-mockup-img" src="45d210_9044418ec07543a39dfdd5b224b1d0df~mv2.avif" alt="Google Docs" loading="lazy" />
+            <img class="exp-badge-icon" src="docs.avif" alt="Docs icon" loading="lazy" />
           </div>
-          <div class="case-content-col">
+          <div class="exp-text-box">
             <h3>Google Docs</h3>
-            <p>Joined the founding designer and researcher on a team of >30 engineers. Designed sharing permissions, comments, revision history, custom color picker, and document themes. Led visual redesign of Docs in collaboration with designers across Google to create our first unified cross-product design system.</p>
+            <p>Joined the founding designer and researcher on a team of >30 eng.<br><br>Sharing permissions, comments, revision history, custom color picker, document themes, visual redesign of docs in collaboration with designers across all google products to create our first design system.</p>
           </div>
         </div>
 
         <!-- Google Presentations -->
-        <div class="case-item" id="gpresentations">
-          <div class="case-visual-col">
-            <img class="case-mockup-img" src="45d210_e883d058f918463e8f2165d1d9f91ab1~mv2.avif" alt="Google Presentations" loading="lazy" />
-            <img class="case-app-badge" src="Presentations-icon.avif" alt="Presentations icon" loading="lazy" />
+        <div class="exp-card" id="gpresentations">
+          <div class="exp-visual-box">
+            <img class="exp-mockup-img" src="45d210_e883d058f918463e8f2165d1d9f91ab1~mv2.avif" alt="Google Presentations" loading="lazy" />
+            <img class="exp-badge-icon" src="Presentations-icon.avif" alt="Presentations icon" loading="lazy" />
           </div>
-          <div class="case-content-col">
+          <div class="exp-text-box">
             <h3>Google Presentations</h3>
-            <p>Launched Google Presentations as a spin-off of the Docs team supercharged by two acquisitions. Defined the market differentiation strategy (Keynote = Polish, PPT = Power, Google = Collaboration). Built special editor tools, frictionless sharing and invite flows, Gmail attachments, anonymous viewing and editing, contextual live chat, comments, slide themes, and using a mobile phone as a slideshow remote.</p>
+            <p>We launched Google Presentations as a spin off of the Docs team supercharged by two eng build/buy acquisitions.<br><br>Market differentiation strategy (Keynote=Polish, PPT=Power, Google=Collaboration), Special editor tools, ease of sharing, invite flows, gmail attachments, anonymous viewing and editing, contextual live chat, comments, slide themes, use of phone as slideshow remote, bi-directional languages.</p>
           </div>
         </div>
 
         <!-- Google Drive -->
-        <div class="case-item" id="gdrive">
-          <div class="case-visual-col">
-            <img class="case-mockup-img" src="45d210_5de8beac771d4866bec71f056eb92f8e~mv2.avif" alt="Google Drive" loading="lazy" />
-            <img class="case-app-badge" src="Drive-icon.avif" alt="Drive icon" loading="lazy" />
+        <div class="exp-card" id="gdrive">
+          <div class="exp-visual-box">
+            <img class="exp-mockup-img" src="45d210_5de8beac771d4866bec71f056eb92f8e~mv2.avif" alt="Google Drive" loading="lazy" />
+            <img class="exp-badge-icon" src="Drive-icon.avif" alt="Drive icon" loading="lazy" />
           </div>
-          <div class="case-content-col">
+          <div class="exp-text-box">
             <h3>Google Drive</h3>
-            <p>Led a unified sharing and collaboration strategy across all Google products and services, managing disparate sharing flows and cross-functional stakeholders. Having a single unified model allowed us to tackle the even more complex problem of "shared folders" with nested inheritance—something our colleagues at Dropbox deeply respected and envied.</p>
+            <p>I led a unified sharing and collaboration strategy across all Google products and services. Managing disparate sharing flows and the politics of stakeholder management.<br><br>Having a unified sharing model allowed us to tackle the even more gnarly problem of "shared folders" with complex inheritance issues. (Something my friends at Dropbox deeply respected and envied).</p>
           </div>
         </div>
 
         <!-- Gmail -->
-        <div class="case-item" id="gmail">
-          <div class="case-visual-col">
-            <img class="case-mockup-img" src="45d210_a4e3a19d274b418a84f97a4a5109735e~mv2.avif" alt="Gmail" loading="lazy" />
-            <img class="case-app-badge" src="Presentations-icon (1).avif" alt="Gmail icon" loading="lazy" />
+        <div class="exp-card" id="gmail">
+          <div class="exp-visual-box">
+            <img class="exp-mockup-img" src="45d210_a4e3a19d274b418a84f97a4a5109735e~mv2.avif" alt="Gmail" loading="lazy" />
+            <img class="exp-badge-icon" src="Presentations-icon (1).avif" alt="Gmail icon" loading="lazy" />
           </div>
-          <div class="case-content-col">
+          <div class="exp-text-box">
             <h3>Gmail</h3>
-            <p>Joined an exceptional design team on Gmail. Projects focused on leveraging contextual behavioral insights to accelerate productivity and reduce context switching—such as smart compose recommendations on whom to CC, managing personal vs. professional email personas, and previewing linked external content like Yelp directly within threads.</p>
+            <p>Joined an awesome team of three designers on gmail.<br><br>My projects were focused on leveraging contextual behavioral insights to accelerate productivity and reduce the need to leave gmail, (eg. smart compose recommendations on who to CC, personal/professional emails, and pulling in previews of linked content like yelp).</p>
           </div>
         </div>
 
         <!-- Google Contacts -->
-        <div class="case-item" id="gcontacts">
-          <div class="case-visual-col">
-            <img class="case-mockup-img" src="45d210_327d7ce91bb047d4ab53f09d6acb2d02~mv2.avif" alt="Google Contacts" loading="lazy" />
-            <img class="case-app-badge" src="Google_Contacts_icon_svg.avif" alt="Contacts icon" loading="lazy" />
+        <div class="exp-card" id="gcontacts">
+          <div class="exp-visual-box">
+            <img class="exp-mockup-img" src="45d210_327d7ce91bb047d4ab53f09d6acb2d02~mv2.avif" alt="Google Contacts" loading="lazy" />
+            <img class="exp-badge-icon" src="Google_Contacts_icon_svg.avif" alt="Contacts icon" loading="lazy" />
           </div>
-          <div class="case-content-col">
+          <div class="exp-text-box">
             <h3>Google Contacts</h3>
-            <p>Tasked with turning around Google Contacts following a blunt executive OKR of "Contacts that don't suck." Created "go/suckscore"—a transparent dashboard tracking all known leadership gripes and user friction. This defused political tension and boosted team morale. We fixed complex Outlook imports, intelligent contact merging, and enabled users to share and maintain evergreen personal info with their networks.</p>
+            <p>I was asked to join a team burned out and further insulted by executives setting a company OKR of "Contacts that don't suck" ...yeah that happened. 😅<br><br>I created "go/suckscore" a dashboard of all known executive gripes and customer challenges. This defused political tension and built confidence and morale. Folks cheered us on as we "killed the suck." We tackled hairy problems like complex outlook import flows, merging contacts, slurping in contact data from past email correspondence, and allowing people to share and maintain their own "evergreen" contact info with all their contacts.</p>
           </div>
         </div>
 
         <!-- Google Trends -->
-        <div class="case-item" id="gtrends">
-          <div class="case-visual-col">
-            <img class="case-mockup-img" src="45d210_bf806afdaeaa4987af4da93d35496550~mv2.avif" alt="Google Trends" loading="lazy" />
-            <img class="case-app-badge" src="Trends-icon (1).avif" alt="Trends icon" loading="lazy" />
+        <div class="exp-card" id="gtrends">
+          <div class="exp-visual-box">
+            <img class="exp-mockup-img" src="45d210_bf806afdaeaa4987af4da93d35496550~mv2.avif" alt="Google Trends" loading="lazy" />
+            <img class="exp-badge-icon" src="Trends-icon (1).avif" alt="Trends icon" loading="lazy" />
           </div>
-          <div class="case-content-col">
+          <div class="exp-text-box">
             <h3>Google Trends</h3>
-            <p>Larry and Sergey tasked a small group of engineers, a PM, a fellow designer, and myself with proving the value of keeping anonymized search traffic data. We built Google Trends in our 20% time, unlocking a completely unprecedented behavioral dataset for researchers, journalists, and universities worldwide.</p>
+            <p>Larry and Sergey asked a small group of engineers, a pm, a good design friend/colleague of mine, and myself to demonstrate the value of Google being able to keep anonymized search traffic data.<br><br>We created Google Trends in our 20% time which was meant to unlock a new data resource for thousands of brilliant PHD researchers.</p>
           </div>
         </div>
 
         <!-- Google Moderator -->
-        <div class="case-item" id="gmoderator">
-          <div class="case-visual-col">
-            <img class="case-mockup-img" src="45d210_379aa093378d4c5ca3590ab7c5be34a4~mv2.avif" alt="Google Moderator" loading="lazy" />
-            <img class="case-app-badge" src="Moderator-icon.avif" alt="Dory icon" loading="lazy" />
+        <div class="exp-card" id="gmoderator">
+          <div class="exp-visual-box">
+            <img class="exp-mockup-img" src="45d210_379aa093378d4c5ca3590ab7c5be34a4~mv2.avif" alt="Google Moderator" loading="lazy" />
+            <img class="exp-badge-icon" src="Moderator-icon.avif" alt="Dory icon" loading="lazy" />
           </div>
-          <div class="case-content-col">
+          <div class="exp-text-box">
             <h3>Google Moderator</h3>
-            <p>Co-created Google Moderator ("Dory") during 20% time to let massive audiences vote on the best questions for leaders. When President Obama took office, his transition team worked with us to deploy Google Moderator to power the nation’s historic first live online presidential town hall. The voting algorithms accurately surfaced grassroots civic interest years before traditional polling caught up.</p>
+            <p>Two engineers, a pm, and I worked on Google Moderator (aka "Dory") as our 20% project to better allow large groups of people to select the best questions to ask of world leaders.<br><br>It was first used internally when famous guest lectures visited the Google campus. When Obama became president he asked us to work with him and used Google Moderator to host the historic event of our nation's first online town hall. The Google Moderator algorithms I worked on correctly identified a broad and growing interest in legalization questions years before it was popularized and acted on by our state governments.</p>
           </div>
         </div>
 
         <!-- Zoodles -->
-        <div class="case-item" id="zoodles">
-          <div class="case-visual-col">
-            <img class="case-mockup-img" src="45d210_46a320260d4a4a6cac0f2640c8755aa4~mv2.avif" alt="Zoodles Kid Mode" loading="lazy" />
-            <img class="case-app-badge" src="KidMode-icon (1).avif" alt="KidMode icon" loading="lazy" />
+        <div class="exp-card" id="zoodles">
+          <div class="exp-visual-box">
+            <img class="exp-mockup-img" src="45d210_46a320260d4a4a6cac0f2640c8755aa4~mv2.avif" alt="Zoodles Kid Mode" loading="lazy" />
+            <img class="exp-badge-icon" src="KidMode-icon (1).avif" alt="KidMode icon" loading="lazy" />
           </div>
-          <div class="case-content-col">
+          <div class="exp-text-box">
             <h3>Zoodles: Kid Mode™</h3>
-            <p>Hired by the CEO to lead design and research. Over 4 years, we scaled from 300 to 15 million users and were acquired by HTC. We made it effortless for parents to lock any laptop, tablet, or phone into a safe environment with expert-curated educational games, custom digital storybooks, an art studio, and secure video mail with extended family.</p>
+            <p>Hired by the CEO to lead design and research. Over the course of 4 years, we went from 300 customers to 15 million and were acquired by HTC.<br><br>We made it easy for parents to lock down any device (laptop/tablet/phone) into a Kid Mode™ that brought forward fun and educational content, selected by educational experts, to improve specific age-appropriate skills.<br><br>We indexed third-party games, videos, and apps. We also created our own recordable storybooks, digital art studio, and private video mail to help kids stay connected with distant family. I managed a team of 11 illustrators and one game designer on contract.</p>
           </div>
         </div>
 
         <!-- MyFitnessPal -->
-        <div class="case-item" id="mfp">
-          <div class="case-visual-col">
-            <img class="case-mockup-img" src="45d210_3f2d830e358f4358a7f2313fb75ab6fb~mv2.avif" alt="MyFitnessPal" loading="lazy" />
-            <img class="case-app-badge" src="Moderator-icon (1).avif" alt="Under Armour icon" loading="lazy" />
+        <div class="exp-card" id="mfp">
+          <div class="exp-visual-box">
+            <img class="exp-mockup-img" src="45d210_3f2d830e358f4358a7f2313fb75ab6fb~mv2.avif" alt="MyFitnessPal" loading="lazy" />
+            <img class="exp-badge-icon" src="Moderator-icon (1).avif" alt="Under Armour icon" loading="lazy" />
           </div>
-          <div class="case-content-col">
+          <div class="exp-text-box">
             <h3>MyFitnessPal</h3>
-            <p>Led product design and research, growing the platform from 75M to 150M users before acquisition by Under Armour. Unified iOS, Android, and Web on a shared design system, revamped recipe import, launched verified nutritional data, and built MFP's first premium subscription tier as an original launch partner for Apple Watch.</p>
+            <p>Hired by the CEO to lead design and research. Over the course of two years we went from 75 million customers to 150 and got acquired by Under Armour.<br><br>We improved customer experience and speed of product development by redesigning web, iOS, and Android to leverage a shared design system. We cleaned up search results, standardized serving sizes, launched new verified nutritional data, restaurant menus, and new recipe import flows. We launched MFP's first paid membership feature set and were one of the original Apple Watch launch partners.<br><br>After Under Armour acquired us along with several other "Connected Fitness" apps we worked together on unified login, standardized components, and a strategic partnership across digital services, hardware, and athletic gear.</p>
           </div>
         </div>
 
         <!-- Uber for Business -->
-        <div class="case-item" id="uber-b2b">
-          <div class="case-visual-col">
-            <img class="case-mockup-img" src="45d210_b56368e743a9468c95f17042503ddfc5~mv2.avif" alt="Uber for Business" loading="lazy" />
-            <img class="case-app-badge" src="Uber-icon.avif" alt="Uber icon" loading="lazy" />
+        <div class="exp-card" id="uber-b2b">
+          <div class="exp-visual-box">
+            <img class="exp-mockup-img" src="45d210_b56368e743a9468c95f17042503ddfc5~mv2.avif" alt="Uber for Business" loading="lazy" />
+            <img class="exp-badge-icon" src="Uber-icon.avif" alt="Uber icon" loading="lazy" />
           </div>
-          <div class="case-content-col">
+          <div class="exp-text-box">
             <h3>Uber For Business</h3>
-            <p>Ran Product Design, Research, and Brand Design for Uber for Business. Built and launched services for corporate travel, employee meals, automated expense integration, direct billing, commuter benefits, event travel vouchers, and instant policy validation across SMB, Enterprise, universities, and healthcare systems.</p>
+            <p>Hired by the Head of Design to run Product Design, Research, and Brand Design for "Uber for Business."<br><br>We built and launched services for employee travel, employee meals, expense integration, company cards, direct billing, commuter benefits, onsite interviews, customer travel, travel vouchers, eats vouchers, event planning, concierge services, catering, and instant policy validation. Our strategy spanned SMB, Enterprise, Municipalities, Universities, Non-profits, and Health Care.</p>
           </div>
         </div>
 
         <!-- Uber Support Strategy -->
-        <div class="case-item" id="uber-support">
-          <div class="case-visual-col">
-            <img class="case-mockup-img" src="45d210_7c6036b45b934b149366088d410e15d5~mv2.avif" alt="Uber Support Strategy" loading="lazy" />
-            <img class="case-app-badge" src="Uber-icon (1).avif" alt="Uber icon" loading="lazy" />
+        <div class="exp-card" id="uber-support">
+          <div class="exp-visual-box">
+            <img class="exp-mockup-img" src="45d210_7c6036b45b934b149366088d410e15d5~mv2.avif" alt="Uber Support Strategy" loading="lazy" />
+            <img class="exp-badge-icon" src="Uber-icon (1).avif" alt="Uber icon" loading="lazy" />
           </div>
-          <div class="case-content-col">
+          <div class="exp-text-box">
             <h3>Uber Support Strategy</h3>
-            <p>Transformed customer support from a cost center into a core competitive moat. Partnered with frontline agents in Greenlight Hubs, CRM tools engineers, and executives to analyze root causes of customer friction. Quantified the true business impact of defects, streamlined resolution times, launched agent wellness initiatives, and significantly improved CSAT scores.</p>
+            <p>Support is one of the best ways for Uber to differentiate itself from competitors.<br><br>I worked with support agents, support ops, our internal customer relationship management tools team, and executive leadership across all functions and lines of business to surface valuable customer insights. We helped product teams perform root cause analysis and launched a company-wide initiative to reduce product defects.<br><br>We framed the true cost of these customer issues in terms of both operational costs and the severity of their cost to our brand aspirations and our core customer value proposition.<br><br>I built strong partnerships with the people running and working in our Green Light Hubs, Internal Support Centers, External support centers, as well as our internal Safety, Security, and Fraud teams. I also partnered with the VP of our Incident Response Team on initiatives to improve agent wellness. These initiatives helped Uber reduce the cost of support operations and improve customer satisfaction.</p>
           </div>
         </div>
 
         <!-- Uber Workshops -->
-        <div class="case-item" id="uber-workshops">
-          <div class="case-visual-col">
-            <img class="case-mockup-img" src="45d210_2167d0cdefbf415f863f9c75f7b633d7~mv2.avif" alt="Uber Workshops" loading="lazy" />
-            <img class="case-app-badge" src="Uber-icon (2).avif" alt="Uber icon" loading="lazy" />
+        <div class="exp-card" id="uber-workshops">
+          <div class="exp-visual-box">
+            <img class="exp-mockup-img" src="45d210_2167d0cdefbf415f863f9c75f7b633d7~mv2.avif" alt="Uber Workshops" loading="lazy" />
+            <img class="exp-badge-icon" src="Uber-icon (2).avif" alt="Uber icon" loading="lazy" />
           </div>
-          <div class="case-content-col">
+          <div class="exp-text-box">
             <h3>Uber Workshops</h3>
-            <p>Designed and facilitated cross-functional executive workshops to shift organizational focus toward holistic Service Design. The "Frequency Severity Workshop" embedded product leaders with support operations to build genuine customer obsession, while the "Ripples of Collision Workshop" provided a blueprint framework for navigating complex multi-sided marketplace dynamics.</p>
+            <p>While reporting to the VP of Design, I had the chance to help him use design systems to nudge designers' focus away from visual, interaction, and product design to instead think more holistically about the end-to-end customer experience and Service Design.<br><br>My "Frequency Severity Workshop" helped the VPs and executives of PM, Design, Engineering, and Marketing develop a culture of "customer obsession" learning directly from the support agents who have helped thousands of customers through frequent and severe customer experiences.<br><br>My "Ripples Workshop" provided a cross-functional collaborative framework for creating service blueprints of "multisided markets." Where a company is the hub that facilitates the experience of all parties involved.</p>
           </div>
         </div>
 
         <!-- Hover -->
-        <div class="case-item" id="hover">
-          <div class="case-visual-col">
-            <img class="case-mockup-img" src="45d210_95d0f573f66549959bdee2491983094c~mv2.avif" alt="Hover" loading="lazy" />
-            <img class="case-app-badge" src="Hover-icon (1).avif" alt="Hover icon" loading="lazy" />
+        <div class="exp-card" id="hover">
+          <div class="exp-visual-box">
+            <img class="exp-mockup-img" src="45d210_95d0f573f66549959bdee2491983094c~mv2.avif" alt="Hover" loading="lazy" />
+            <img class="exp-badge-icon" src="Hover-icon (1).avif" alt="Hover icon" loading="lazy" />
           </div>
-          <div class="case-content-col">
+          <div class="exp-text-box">
             <h3>Hover</h3>
-            <p>Collaborated directly with the CEO to define Hover's long-term purpose, brand positioning, and platform roadmap. Synthesized cross-functional research into a shared strategic framework connecting homeowners, contractors, and insurance carriers, establishing a unified product trajectory powered by deep 3D property data.</p>
+            <p>Hired by the CEO to work on Hover's forward looking mission, purpose, vision, and strategic roadmap.<br><br>I worked cross-functionally with product, engineering, design, research, support, operations, marketing, and sales. We discussed the past insights and inspiration on why people came to Hover and what they want to help Hover achieve.<br><br>We simplified these insights into concise and coherent articulations of why the market needs a better process and marketplace for property improvements.<br><br>We identified the ways Hover can create and provide new value to homeowners, contractors, and insurance companies.<br><br>We created a shared language for evaluating our brand aspirations and the value prop we can offer each side of the market at different phases of homeownership and project management.<br><br>We illustrated the future world of services we aim to offer, identified a roadmap of key projects we'd need to work on, and underscored the importance of investing in our 'foundation' > 'features.'</p>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- Section: Contact -->
-  <section class="contact-section" id="contact">
-    <div class="content-wrap">
-      <img class="chrysalis-img" src="45d210_1fdd623132e54832b2dc7564e2883f4d~mv2.avif" alt="Chrysalis" loading="lazy" />
-      <h2 class="contact-title">How can I help?</h2>
-      <p class="contact-desc">
-        I'm currently advising a few companies while exploring new opportunities to help CEOs and Co-Founders inspire their team's best work.
-      </p>
-      <div>
-        <a class="email-link" href="mailto:davesyoung@gmail.com">davesyoung@gmail.com</a>
+  <!-- Section 4: Contact / How Can I Help -->
+  <section class="section-contact" id="contact">
+    <div class="contact-wrap">
+      <div class="contact-photo-box">
+        <img src="45d210_1fdd623132e54832b2dc7564e2883f4d~mv2.avif" alt="Chrysalis" loading="lazy" />
       </div>
-      <p class="location-tag">Berkeley, CA</p>
+      <div class="contact-content-box">
+        <h2>How can I help?</h2>
+        <div class="contact-rule"></div>
+        <p class="bio">
+          I'm currently advising a few companies while exploring new opportunities to help CEOs and Co-Founders inspire their teams' best work.
+        </p>
+        <div class="contact-details">
+          <a class="email" href="mailto:davesyoung@gmail.com">davesyoung@gmail.com</a>
+          <span class="location">Berkeley, CA</span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Dark Footer -->
   <footer class="site-footer">
-    <p>© 2026 by Dave Young · <a href="https://sacret.org" style="color: inherit; text-decoration: underline;">Sacret LLC</a></p>
+    <p>© <span id="current-year">2026</span> by Dave Young</p>
   </footer>
 
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
