@@ -146,7 +146,7 @@
       text-decoration: none;
     }
 
-    /* Split Screen Hero - Full 50vw Bleed */
+    /* Split Screen Hero - Full 50vw Bleed, Stretches Flush to Next Section */
     .hero-split {
       display: flex;
       width: 100vw;
@@ -235,20 +235,23 @@
       font-weight: 400;
     }
 
-    /* Pale Sage Help Section */
+    /* Pale Sage Help Section - 50vw Split */
     section.section-help {
       background-color: var(--bg-sage-light);
       width: 100vw;
-      padding: 5.5rem 4vw;
+      padding: 5.5rem 0;
       margin: 0;
     }
     .help-wrap {
-      max-width: 1280px;
-      margin: 0 auto;
+      width: 100vw;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5vw;
-      width: 100%;
+      grid-template-columns: 50vw 50vw;
+    }
+    .help-col-left {
+      padding: 0 4vw 0 4vw;
+    }
+    .help-col-right {
+      padding: 0 4vw 0 2vw;
     }
     .section-title-bar {
       margin-bottom: 1.25rem;
@@ -287,7 +290,7 @@
       font-weight: 400;
     }
 
-    /* Dark Slate Services Section */
+    /* Dark Slate Services Section - 33.3vw Split */
     section.section-services {
       background-color: var(--bg-slate-dark);
       color: var(--text-slate-body);
@@ -296,12 +299,10 @@
       margin: 0;
     }
     .services-wrap {
-      max-width: 1280px;
-      margin: 0 auto;
+      width: 100%;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 3.5vw;
-      width: 100%;
     }
     .service-col {
       display: flex;
@@ -344,20 +345,15 @@
       color: var(--text-slate-body);
     }
 
-    /* Experience Section (Edge-to-Edge Desktop Frame with Cropped Mockups) */
+    /* Experience Section (Edge-to-Edge Desktop Grid matching Wix 1:1) */
     section.section-experience {
       background-color: var(--bg-white);
       width: 100vw;
-      padding: 6rem 4vw 4rem 4vw;
+      padding: 6rem 0 4rem 0;
       margin: 0;
     }
-    .exp-wrap {
-      max-width: 1320px;
-      margin: 0 auto;
-      width: 100%;
-    }
     .exp-header-wrap {
-      margin-bottom: 3.5rem;
+      padding: 0 4vw 3.5rem 4vw;
     }
     h2.exp-main-title {
       font-size: 42px;
@@ -379,24 +375,24 @@
       color: var(--accent-gold);
     }
 
-    /* 2 Large Columns on Desktop */
+    /* Full-width 50vw / 50vw columns */
     .exp-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4.5rem 4vw;
-      width: 100%;
+      grid-template-columns: 50vw 50vw;
+      width: 100vw;
+      row-gap: 5rem;
     }
     .exp-item {
       display: flex;
       align-items: flex-start;
-      gap: 22px;
+      width: 100%;
     }
-    /* Fixed 280px frame with 420px height crops wide screenshots on the right */
+    /* Fixed frame crops wide screenshots on the right edge */
     .exp-visual-box {
       position: relative;
-      flex: 0 0 clamp(250px, 20vw, 290px);
-      width: clamp(250px, 20vw, 290px);
-      height: clamp(380px, 30vw, 440px);
+      flex: 0 0 clamp(280px, 25vw, 360px);
+      width: clamp(280px, 25vw, 360px);
+      height: clamp(380px, 32vw, 440px);
       overflow: hidden;
       background: transparent;
     }
@@ -408,39 +404,40 @@
       display: block;
     }
 
-    /* Custom object alignments matching original Wix framing */
-    #gmaps .exp-mockup-img { object-position: center top; }
+    /* Custom alignments matching original Wix */
+    #gmaps .exp-mockup-img { object-position: 25% top; }
     #gdocs .exp-mockup-img { object-position: left top; }
     #gpresentations .exp-mockup-img { object-position: left top; }
     #gdrive .exp-mockup-img { object-position: left top; }
     #gmail .exp-mockup-img { object-position: left top; }
     #gcontacts .exp-mockup-img { object-position: left top; }
     #gtrends .exp-mockup-img { object-position: left top; }
-    #gmoderator .exp-mockup-img { object-position: 22% top; }
+    #gmoderator .exp-mockup-img { object-position: 25% top; }
     #zoodles .exp-mockup-img { object-position: left center; }
-    #mfp .exp-mockup-img { object-position: center top; object-fit: contain; }
+    #mfp .exp-mockup-img { object-position: center top; }
     #uber-b2b .exp-mockup-img { object-position: left top; }
     #uber-support .exp-mockup-img { object-position: left top; }
     #uber-workshops .exp-mockup-img { object-position: center top; }
-    #hover .exp-mockup-img { object-position: center top; object-fit: contain; }
+    #hover .exp-mockup-img { object-position: left top; }
 
-    /* Transparent Badges */
+    /* Transparent Badges - Sitting inside the visual box, on top of the image */
     .exp-badge-icon {
       position: absolute;
-      bottom: -15px;
-      left: -10px;
-      width: 72px;
-      height: 72px;
+      left: 20px;
+      bottom: 24px;
+      width: 76px;
+      height: 76px;
       background: transparent !important;
       border: none !important;
       box-shadow: none !important;
       border-radius: 0 !important;
       object-fit: contain;
       pointer-events: none;
+      z-index: 5;
     }
     .exp-text-box {
       flex: 1;
-      padding-top: 0.25rem;
+      padding: 0 3.5vw 0 24px;
     }
     .exp-text-box h3 {
       font-size: 22px;
@@ -581,43 +578,53 @@
         padding-left: 1.5rem;
         padding-right: 1.5rem;
       }
-      .help-wrap, .services-wrap {
+      .help-wrap {
+        grid-template-columns: 1fr;
+        width: 100%;
+      }
+      .help-col-left, .help-col-right {
+        padding: 0;
+      }
+      .services-wrap {
         grid-template-columns: 1fr;
         gap: 2.5rem;
       }
 
-      /* Clean Stacking on Mobile */
-      .exp-header-wrap { margin-bottom: 2.5rem; }
+      /* Clean Mobile Layout matching Image 80-84 */
+      .exp-header-wrap { padding: 0 0 2.5rem 0; }
       .exp-grid {
         grid-template-columns: 1fr;
-        gap: 2.5rem;
+        width: 100%;
+        row-gap: 3rem;
       }
       .exp-item {
         display: flex;
         flex-direction: column;
-        gap: 1.5rem;
+        width: 100%;
       }
       .exp-visual-box {
-        width: 100%;
-        height: auto;
-        max-height: 360px;
+        width: 100vw;
+        margin-left: -1.5rem;
+        margin-right: -1.5rem;
+        height: 380px;
+        flex: none;
         overflow: hidden;
       }
       .exp-mockup-img {
         width: 100%;
         height: 100%;
-        max-height: 360px;
-        object-fit: contain;
+        object-fit: cover;
+        object-position: center top;
       }
       .exp-badge-icon {
-        left: 10px;
-        bottom: -15px;
-        width: 64px;
-        height: 64px;
+        left: 1.5rem;
+        bottom: 20px;
+        width: 68px;
+        height: 68px;
       }
       .exp-text-box {
         width: 100%;
-        padding-top: 0.5rem;
+        padding: 1.5rem 0 0 0;
       }
 
       section.section-contact {
@@ -704,7 +711,7 @@
   <!-- Pale Sage Help Section -->
   <section class="section-help" id="help">
     <div class="help-wrap">
-      <div>
+      <div class="help-col-left">
         <div class="section-title-bar">
           <h2>I'm here to help</h2>
           <div class="accent-rule-sage"></div>
@@ -714,7 +721,7 @@
         </p>
       </div>
 
-      <div>
+      <div class="help-col-right">
         <div class="section-title-bar">
           <h2>I can help you</h2>
           <div class="accent-rule-sage"></div>
@@ -778,187 +785,186 @@
 
   <!-- Experience Section -->
   <section class="section-experience" id="experience">
-    <div class="exp-wrap">
-      <div class="exp-header-wrap">
-        <h2 class="exp-main-title">Experience</h2>
-        <p class="exp-subnav">
-          Google: <a href="#gmaps">Maps</a>, <a href="#gdocs">Docs</a>, <a href="#gpresentations">Presentations</a>, <a href="#gdrive">Drive</a>, <a href="#gmail">Gmail</a>, <a href="#gcontacts">Contacts</a>, <a href="#gtrends">Trends</a>, <a href="#gmoderator">Moderator</a><br>
-          <a href="#zoodles">Zoodles</a>, <a href="#mfp">MyFitnessPal</a>, <a href="#uber-b2b">Uber for Business</a>, <a href="#uber-support">Support Strategy</a>, <a href="#uber-workshops">Workshops</a>, <a href="#hover">Hover</a>
-        </p>
+    <div class="exp-header-wrap">
+      <h2 class="exp-main-title">Experience</h2>
+      <p class="exp-subnav">
+        Google: <a href="#gmaps">Maps</a>, <a href="#gdocs">Docs</a>, <a href="#gpresentations">Presentations</a>, <a href="#gdrive">Drive</a>, <a href="#gmail">Gmail</a>, <a href="#gcontacts">Contacts</a>, <a href="#gtrends">Trends</a>, <a href="#gmoderator">Moderator</a><br>
+        <a href="#zoodles">Zoodles</a>, <a href="#mfp">MyFitnessPal</a>, <a href="#uber-b2b">Uber for Business</a>, <a href="#uber-support">Support Strategy</a>, <a href="#uber-workshops">Workshops</a>, <a href="#hover">Hover</a>
+      </p>
+    </div>
+
+    <div class="exp-grid">
+      <!-- Google Maps -->
+      <div class="exp-item" id="gmaps">
+        <div class="exp-visual-box">
+          <img class="exp-mockup-img" src="Maps-bg.png" onerror="this.onerror=null; this.src='45d210_4477b1a5802d4e159ca56eb9fea36e69~mv2.avif';" alt="Google Maps" loading="lazy" />
+          <img class="exp-badge-icon" src="Maps-icon.png" alt="Maps icon" loading="lazy" />
+        </div>
+        <div class="exp-text-box">
+          <h3>Google Maps</h3>
+          <p>First full-time designer on team of 90 engineers from multiple acquisitions.<br><br>Internationalization, geodata creation and curation, editable maps, search results, reviews, filtering, location content, business content, UX goals for direction algorithms, multi-step directions, draggable direction routes, printing, saved places, custom map creation and collaboration.</p>
+        </div>
       </div>
 
-      <div class="exp-grid">
-        <!-- Google Maps -->
-        <div class="exp-item" id="gmaps">
-          <div class="exp-visual-box">
-            <img class="exp-mockup-img" src="Maps-bg.png" onerror="this.onerror=null; this.src='45d210_4477b1a5802d4e159ca56eb9fea36e69~mv2.avif';" alt="Google Maps" loading="lazy" />
-            <img class="exp-badge-icon" src="Maps-icon.png" alt="Maps icon" loading="lazy" />
-          </div>
-          <div class="exp-text-box">
-            <h3>Google Maps</h3>
-            <p>First full-time designer on team of 90 engineers from multiple acquisitions.<br><br>Internationalization, geodata creation and curation, editable maps, search results, reviews, filtering, location content, business content, UX goals for direction algorithms, multi-step directions, draggable direction routes, printing, saved places, custom map creation and collaboration.</p>
-          </div>
+      <!-- Google Docs -->
+      <div class="exp-item" id="gdocs">
+        <div class="exp-visual-box">
+          <img class="exp-mockup-img" src="Screen Shot 2022-04-01 at 12.03.25 PM.png" onerror="this.onerror=null; this.src='docs.png'; this.onerror=function(){this.src='45d210_9044418ec07543a39dfdd5b224b1d0df~mv2.avif';};" alt="Google Docs" loading="lazy" />
+          <img class="exp-badge-icon" src="docs.png" alt="Docs icon" loading="lazy" />
         </div>
-
-        <!-- Google Docs -->
-        <div class="exp-item" id="gdocs">
-          <div class="exp-visual-box">
-            <img class="exp-mockup-img" src="Screen Shot 2022-04-01 at 12.03.25 PM.png" onerror="this.onerror=null; this.src='docs.png'; this.onerror=function(){this.src='45d210_9044418ec07543a39dfdd5b224b1d0df~mv2.avif';};" alt="Google Docs" loading="lazy" />
-            <img class="exp-badge-icon" src="docs.png" alt="Docs icon" loading="lazy" />
-          </div>
-          <div class="exp-text-box">
-            <h3>Google Docs</h3>
-            <p>Joined the founding designer and researcher on a team of >30 eng.<br><br>Sharing permissions, comments, revision history, custom color picker, document themes, visual redesign of docs in collaboration with designers across all google products to create our first design system.</p>
-          </div>
+        <div class="exp-text-box">
+          <h3>Google Docs</h3>
+          <p>Joined the founding designer and researcher on a team of >30 eng.<br><br>Sharing permissions, comments, revision history, custom color picker, document themes, visual redesign of docs in collaboration with designers across all google products to create our first design system.</p>
         </div>
+      </div>
 
-        <!-- Google Presentations -->
-        <div class="exp-item" id="gpresentations">
-          <div class="exp-visual-box">
-            <img class="exp-mockup-img" src="Screen Shot 2022-04-01 at 12.04.39 PM.png" onerror="this.onerror=null; this.src='Screen Shot 2022-04-01 at 8.57.36 PM.png'; this.onerror=function(){this.src='45d210_e883d058f918463e8f2165d1d9f91ab1~mv2.avif';};" alt="Google Presentations" loading="lazy" />
-            <img class="exp-badge-icon" src="Presentations-icon.png" alt="Presentations icon" loading="lazy" />
-          </div>
-          <div class="exp-text-box">
-            <h3>Google Presentations</h3>
-            <p>We launched Google Presentations as a spin off of the Docs team supercharged by two eng build/buy acquisitions.<br><br>Market differentiation strategy (Keynote=Polish, PPT=Power, Google=Collaboration), Special editor tools, ease of sharing, invite flows, gmail attachments, anonymous viewing and editing, contextual live chat, comments, slide themes, use of phone as slideshow remote, bi-directional languages.</p>
-          </div>
+      <!-- Google Presentations -->
+      <div class="exp-item" id="gpresentations">
+        <div class="exp-visual-box">
+          <img class="exp-mockup-img" src="Screen Shot 2022-04-01 at 12.04.39 PM.png" onerror="this.onerror=null; this.src='Screen Shot 2022-04-01 at 8.57.36 PM.png'; this.onerror=function(){this.src='45d210_e883d058f918463e8f2165d1d9f91ab1~mv2.avif';};" alt="Google Presentations" loading="lazy" />
+          <img class="exp-badge-icon" src="Presentations-icon.png" alt="Presentations icon" loading="lazy" />
         </div>
-
-        <!-- Google Drive -->
-        <div class="exp-item" id="gdrive">
-          <div class="exp-visual-box">
-            <img class="exp-mockup-img" src="drive.jpeg" onerror="this.onerror=null; this.src='45d210_5de8beac771d4866bec71f056eb92f8e~mv2.avif';" alt="Google Drive" loading="lazy" />
-            <img class="exp-badge-icon" src="Drive-icon.png" alt="Drive icon" loading="lazy" />
-          </div>
-          <div class="exp-text-box">
-            <h3>Google Drive</h3>
-            <p>I led a unified sharing and collaboration strategy across all Google products and services. Managing disparate sharing flows and the politics of stakeholder management.<br><br>Having a unified sharing model allowed us to tackle the even more gnarly problem of "shared folders" with complex inheritance issues. (Something my friends at Dropbox deeply respected and envied).</p>
-          </div>
+        <div class="exp-text-box">
+          <h3>Google Presentations</h3>
+          <p>We launched Google Presentations as a spin off of the Docs team supercharged by two eng build/buy acquisitions.<br><br>Market differentiation strategy (Keynote=Polish, PPT=Power, Google=Collaboration), Special editor tools, ease of sharing, invite flows, gmail attachments, anonymous viewing and editing, contextual live chat, comments, slide themes, use of phone as slideshow remote, bi-directional languages.</p>
         </div>
+      </div>
 
-        <!-- Gmail -->
-        <div class="exp-item" id="gmail">
-          <div class="exp-visual-box">
-            <img class="exp-mockup-img" src="Gmail (1).png" onerror="this.onerror=null; this.src='45d210_a4e3a19d274b418a84f97a4a5109735e~mv2.avif';" alt="Gmail" loading="lazy" />
-            <img class="exp-badge-icon" src="Presentations-icon (1).png" alt="Gmail icon" loading="lazy" />
-          </div>
-          <div class="exp-text-box">
-            <h3>Gmail</h3>
-            <p>Joined an awesome team of three designers on gmail.<br><br>My projects were focused on leveraging contextual behavioral insights to accelerate productivity and reduce the need to leave gmail, (eg. smart compose recommendations on who to CC, personal/professional emails, and pulling in previews of linked content like yelp).</p>
-          </div>
+      <!-- Google Drive -->
+      <div class="exp-item" id="gdrive">
+        <div class="exp-visual-box">
+          <img class="exp-mockup-img" src="drive.jpeg" onerror="this.onerror=null; this.src='45d210_5de8beac771d4866bec71f056eb92f8e~mv2.avif';" alt="Google Drive" loading="lazy" />
+          <img class="exp-badge-icon" src="Drive-icon.png" alt="Drive icon" loading="lazy" />
         </div>
-
-        <!-- Google Contacts -->
-        <div class="exp-item" id="gcontacts">
-          <div class="exp-visual-box">
-            <img class="exp-mockup-img" src="Contacts.png" onerror="this.onerror=null; this.src='Contacts (1).png'; this.onerror=function(){this.src='45d210_327d7ce91bb047d4ab53f09d6acb2d02~mv2.avif';};" alt="Google Contacts" loading="lazy" />
-            <img class="exp-badge-icon" src="Google_Contacts_icon_svg.png" alt="Contacts icon" loading="lazy" />
-          </div>
-          <div class="exp-text-box">
-            <h3>Google Contacts</h3>
-            <p>I was asked to join a team burned out and further insulted by executives setting a company OKR of "Contacts that don't suck" ...yeah that happened. 😅<br><br>I created "go/suckscore" a dashboard of all known executive gripes and customer challenges. This defused political tension and built confidence and morale. Folks cheered us on as we "killed the suck." We tackled hairy problems like complex outlook import flows, merging contacts, slurping in contact data from past email correspondence, and allowing people to share and maintain their own "evergreen" contact info with all their contacts.</p>
-          </div>
+        <div class="exp-text-box">
+          <h3>Google Drive</h3>
+          <p>I led a unified sharing and collaboration strategy across all Google products and services. Managing disparate sharing flows and the politics of stakeholder management.<br><br>Having a unified sharing model allowed us to tackle the even more gnarly problem of "shared folders" with complex inheritance issues. (Something my friends at Dropbox deeply respected and envied).</p>
         </div>
+      </div>
 
-        <!-- Google Trends -->
-        <div class="exp-item" id="gtrends">
-          <div class="exp-visual-box">
-            <img class="exp-mockup-img" src="Trends.png" onerror="this.onerror=null; this.src='45d210_bf806afdaeaa4987af4da93d35496550~mv2.avif';" alt="Google Trends" loading="lazy" />
-            <img class="exp-badge-icon" src="Trends-icon.png" onerror="this.onerror=null; this.src='Trends-icon (1).png';" alt="Trends icon" loading="lazy" />
-          </div>
-          <div class="exp-text-box">
-            <h3>Google Trends</h3>
-            <p>Larry and Sergey asked a small group of engineers, a pm, a good design friend/colleague of mine, and myself to demonstrate the value of Google being able to keep anonymized search traffic data.<br><br>We created Google Trends in our 20% time which was meant to unlock a new data resource for thousands of brilliant PHD researchers.</p>
-          </div>
+      <!-- Gmail -->
+      <div class="exp-item" id="gmail">
+        <div class="exp-visual-box">
+          <img class="exp-mockup-img" src="Gmail (1).png" onerror="this.onerror=null; this.src='45d210_a4e3a19d274b418a84f97a4a5109735e~mv2.avif';" alt="Gmail" loading="lazy" />
+          <img class="exp-badge-icon" src="Presentations-icon (1).png" alt="Gmail icon" loading="lazy" />
         </div>
-
-        <!-- Google Moderator -->
-        <div class="exp-item" id="gmoderator">
-          <div class="exp-visual-box">
-            <img class="exp-mockup-img" src="Screen Shot 2022-04-01 at 10.58.46 PM.png" onerror="this.onerror=null; this.src='45d210_379aa093378d4c5ca3590ab7c5be34a4~mv2.avif';" alt="Google Moderator" loading="lazy" />
-            <img class="exp-badge-icon" src="Moderator-icon.png" alt="Dory icon" loading="lazy" />
-          </div>
-          <div class="exp-text-box">
-            <h3>Google Moderator</h3>
-            <p>Two engineers, a pm, and I worked on Google Moderator (aka "Dory") as our 20% project to better allow large groups of people to select the best questions to ask of world leaders.<br><br>It was first used internally when famous guest lectures visited the Google campus. When Obama became president he asked us to work with him and used Google Moderator to host the historic event of our nation's first online town hall. The Google Moderator algorithms I worked on correctly identified a broad and growing interest in legalization questions years before it was popularized and acted on by our state governments.</p>
-          </div>
+        <div class="exp-text-box">
+          <h3>Gmail</h3>
+          <p>Joined an awesome team of three designers on gmail.<br><br>My projects were focused on leveraging contextual behavioral insights to accelerate productivity and reduce the need to leave gmail, (eg. smart compose recommendations on who to CC, personal/professional emails, and pulling in previews of linked content like yelp).</p>
         </div>
+      </div>
 
-        <!-- Zoodles -->
-        <div class="exp-item" id="zoodles">
-          <div class="exp-visual-box">
-            <img class="exp-mockup-img" src="Kid Mode.png" onerror="this.onerror=null; this.src='45d210_46a320260d4a4a6cac0f2640c8755aa4~mv2.avif';" alt="Zoodles Kid Mode" loading="lazy" />
-            <img class="exp-badge-icon" src="KidMode-icon (1).png" alt="KidMode icon" loading="lazy" />
-          </div>
-          <div class="exp-text-box">
-            <h3>Zoodles: Kid Mode™</h3>
-            <p>Hired by the CEO to lead design and research. Over the course of 4 years, we went from 300 customers to 15 million and were acquired by HTC.<br><br>We made it easy for parents to lock down any device (laptop/tablet/phone) into a Kid Mode™ that brought forward fun and educational content, selected by educational experts, to improve specific age-appropriate skills.<br><br>We indexed third-party games, videos, and apps. We also created our own recordable storybooks, digital art studio, and private video mail to help kids stay connected with distant family. I managed a team of 11 illustrators and one game designer on contract.</p>
-          </div>
+      <!-- Google Contacts -->
+      <div class="exp-item" id="gcontacts">
+        <div class="exp-visual-box">
+          <img class="exp-mockup-img" src="Contacts.png" onerror="this.onerror=null; this.src='Contacts (1).png'; this.onerror=function(){this.src='45d210_327d7ce91bb047d4ab53f09d6acb2d02~mv2.avif';};" alt="Google Contacts" loading="lazy" />
+          <img class="exp-badge-icon" src="Google_Contacts_icon_svg.png" alt="Contacts icon" loading="lazy" />
         </div>
-
-        <!-- MyFitnessPal -->
-        <div class="exp-item" id="mfp">
-          <div class="exp-visual-box">
-            <img class="exp-mockup-img" src="MFP.png" onerror="this.onerror=null; this.src='45d210_3f2d830e358f4358a7f2313fb75ab6fb~mv2.avif';" alt="MyFitnessPal" loading="lazy" />
-            <img class="exp-badge-icon" src="Moderator-icon (1).png" alt="Under Armour icon" loading="lazy" />
-          </div>
-          <div class="exp-text-box">
-            <h3>MyFitnessPal</h3>
-            <p>Hired by the CEO to lead design and research. Over the course of two years we went from 75 million customers to 150 and got acquired by Under Armour.<br><br>We improved customer experience and speed of product development by redesigning web, iOS, and Android to leverage a shared design system. We cleaned up search results, standardized serving sizes, launched new verified nutritional data, restaurant menus, and new recipe import flows. We launched MFP's first paid membership feature set and were one of the original Apple Watch launch partners.<br><br>After Under Armour acquired us along with several other "Connected Fitness" apps we worked together on unified login, standardized components, and a strategic partnership across digital services, hardware, and athletic gear.</p>
-          </div>
+        <div class="exp-text-box">
+          <h3>Google Contacts</h3>
+          <p>I was asked to join a team burned out and further insulted by executives setting a company OKR of "Contacts that don't suck" ...yeah that happened. 😅<br><br>I created "go/suckscore" a dashboard of all known executive gripes and customer challenges. This defused political tension and built confidence and morale. Folks cheered us on as we "killed the suck." We tackled hairy problems like complex outlook import flows, merging contacts, slurping in contact data from past email correspondence, and allowing people to share and maintain their own "evergreen" contact info with all their contacts.</p>
         </div>
+      </div>
 
-        <!-- Uber for Business -->
-        <div class="exp-item" id="uber-b2b">
-          <div class="exp-visual-box">
-            <img class="exp-mockup-img" src="Screen Shot 2022-04-02 at 7.22.57 PM.png" onerror="this.onerror=null; this.src='45d210_b56368e743a9468c95f17042503ddfc5~mv2.avif';" alt="Uber for Business" loading="lazy" />
-            <img class="exp-badge-icon" src="Uber-icon.png" alt="Uber icon" loading="lazy" />
-          </div>
-          <div class="exp-text-box">
-            <h3>Uber For Business</h3>
-            <p>Hired by the Head of Design to run Product Design, Research, and Brand Design for "Uber for Business."<br><br>We built and launched services for employee travel, employee meals, expense integration, company cards, direct billing, commuter benefits, onsite interviews, customer travel, travel vouchers, eats vouchers, event planning, concierge services, catering, and instant policy validation. Our strategy spanned SMB, Enterprise, Municipalities, Universities, Non-profits, and Health Care.</p>
-          </div>
+      <!-- Google Trends -->
+      <div class="exp-item" id="gtrends">
+        <div class="exp-visual-box">
+          <img class="exp-mockup-img" src="Trends.png" onerror="this.onerror=null; this.src='45d210_bf806afdaeaa4987af4da93d35496550~mv2.avif';" alt="Google Trends" loading="lazy" />
+          <img class="exp-badge-icon" src="Trends-icon.png" onerror="this.onerror=null; this.src='Trends-icon (1).png';" alt="Trends icon" loading="lazy" />
         </div>
-
-        <!-- Uber Support Strategy -->
-        <div class="exp-item" id="uber-support">
-          <div class="exp-visual-box">
-            <img class="exp-mockup-img" src="Uber Support.png" onerror="this.onerror=null; this.src='45d210_7c6036b45b934b149366088d410e15d5~mv2.avif';" alt="Uber Support Strategy" loading="lazy" />
-            <img class="exp-badge-icon" src="Uber-icon.png" alt="Uber icon" loading="lazy" />
-          </div>
-          <div class="exp-text-box">
-            <h3>Uber Support Strategy</h3>
-            <p>Support is one of the best ways for Uber to differentiate itself from competitors.<br><br>I worked with support agents, support ops, our internal customer relationship management tools team, and executive leadership across all functions and lines of business to surface valuable customer insights. We helped product teams perform root cause analysis and launched a company-wide initiative to reduce product defects.<br><br>We framed the true cost of these customer issues in terms of both operational costs and the severity of their cost to our brand aspirations and our core customer value proposition.<br><br>I built strong partnerships with the people running and working in our Green Light Hubs, Internal Support Centers, External support centers, as well as our internal Safety, Security, and Fraud teams. I also partnered with the VP of our Incident Response Team on initiatives to improve agent wellness. These initiatives helped Uber reduce the cost of support operations and improve customer satisfaction.</p>
-          </div>
+        <div class="exp-text-box">
+          <h3>Google Trends</h3>
+          <p>Larry and Sergey asked a small group of engineers, a pm, a good design friend/colleague of mine, and myself to demonstrate the value of Google being able to keep anonymized search traffic data.<br><br>We created Google Trends in our 20% time which was meant to unlock a new data resource for thousands of brilliant PHD researchers.</p>
         </div>
+      </div>
 
-        <!-- Uber Workshops -->
-        <div class="exp-item" id="uber-workshops">
-          <div class="exp-visual-box">
-            <img class="exp-mockup-img" src="Ripples.png" onerror="this.onerror=null; this.src='FrequencySeverity (2).png'; this.onerror=function(){this.src='45d210_2167d0cdefbf415f863f9c75f7b633d7~mv2.avif';};" alt="Uber Workshops" loading="lazy" />
-            <img class="exp-badge-icon" src="Uber-icon.png" alt="Uber icon" loading="lazy" />
-          </div>
-          <div class="exp-text-box">
-            <h3>Uber Workshops</h3>
-            <p>While reporting to the VP of Design, I had the chance to help him use design systems to nudge designers' focus away from visual, interaction, and product design to instead think more holistically about the end-to-end customer experience and Service Design.<br><br>My "Frequency Severity Workshop" helped the VPs and executives of PM, Design, Engineering, and Marketing develop a culture of "customer obsession" learning directly from the support agents who have helped thousands of customers through frequent and severe customer experiences.<br><br>My "Ripples Workshop" provided a cross-functional collaborative framework for creating service blueprints of "multisided markets." Where a company is the hub that facilitates the experience of all parties involved.</p>
-          </div>
+      <!-- Google Moderator -->
+      <div class="exp-item" id="gmoderator">
+        <div class="exp-visual-box">
+          <img class="exp-mockup-img" src="Screen Shot 2022-04-01 at 10.58.46 PM.png" onerror="this.onerror=null; this.src='45d210_379aa093378d4c5ca3590ab7c5be34a4~mv2.avif';" alt="Google Moderator" loading="lazy" />
+          <img class="exp-badge-icon" src="Moderator-icon.png" alt="Dory icon" loading="lazy" />
         </div>
+        <div class="exp-text-box">
+          <h3>Google Moderator</h3>
+          <p>Two engineers, a pm, and I worked on Google Moderator (aka "Dory") as our 20% project to better allow large groups of people to select the best questions to ask of world leaders.<br><br>It was first used internally when famous guest lectures visited the Google campus. When Obama became president he asked us to work with him and used Google Moderator to host the historic event of our nation's first online town hall. The Google Moderator algorithms I worked on correctly identified a broad and growing interest in legalization questions years before it was popularized and acted on by our state governments.</p>
+        </div>
+      </div>
 
-        <!-- Hover -->
-        <div class="exp-item" id="hover">
-          <div class="exp-visual-box">
-            <img class="exp-mockup-img" id="hover-mockup-img"
-                 src="Hover (1).png"
-                 alt="Hover" loading="lazy" />
-            <img class="exp-badge-icon"
-                 src="Hover-icon (1).png"
-                 onerror="this.onerror=null; this.src='Hover-icon.png';"
-                 alt="Hover icon" loading="lazy" />
-          </div>
-          <div class="exp-text-box">
-            <h3>Hover</h3>
-            <p>Hired by the CEO to work on Hover's forward looking mission, purpose, vision, and strategic roadmap.<br><br>I worked cross-functionally with product, engineering, design, research, support, operations, marketing, and sales. We discussed the past insights and inspiration on why people came to Hover and what they want to help Hover achieve.<br><br>We simplified these insights into concise and coherent articulations of why the market needs a better process and marketplace for property improvements.<br><br>We identified the ways Hover can create and provide new value to homeowners, contractors, and insurance companies.<br><br>We created a shared language for evaluating our brand aspirations and the value prop we can offer each side of the market at different phases of homeownership and project management.<br><br>We illustrated the future world of services we aim to offer, identified a roadmap of key projects we'd need to work on, and underscored the importance of investing in our 'foundation' > 'features.'</p>
-          </div>
+      <!-- Zoodles -->
+      <div class="exp-item" id="zoodles">
+        <div class="exp-visual-box">
+          <img class="exp-mockup-img" src="Kid Mode.png" onerror="this.onerror=null; this.src='45d210_46a320260d4a4a6cac0f2640c8755aa4~mv2.avif';" alt="Zoodles Kid Mode" loading="lazy" />
+          <img class="exp-badge-icon" src="KidMode-icon (1).png" alt="KidMode icon" loading="lazy" />
+        </div>
+        <div class="exp-text-box">
+          <h3>Zoodles: Kid Mode™</h3>
+          <p>Hired by the CEO to lead design and research. Over the course of 4 years, we went from 300 customers to 15 million and were acquired by HTC.<br><br>We made it easy for parents to lock down any device (laptop/tablet/phone) into a Kid Mode™ that brought forward fun and educational content, selected by educational experts, to improve specific age-appropriate skills.<br><br>We indexed third-party games, videos, and apps. We also created our own recordable storybooks, digital art studio, and private video mail to help kids stay connected with distant family. I managed a team of 11 illustrators and one game designer on contract.</p>
+        </div>
+      </div>
+
+      <!-- MyFitnessPal -->
+      <div class="exp-item" id="mfp">
+        <div class="exp-visual-box">
+          <img class="exp-mockup-img" src="MFP.png" onerror="this.onerror=null; this.src='45d210_3f2d830e358f4358a7f2313fb75ab6fb~mv2.avif';" alt="MyFitnessPal" loading="lazy" />
+          <img class="exp-badge-icon" src="Moderator-icon (1).png" alt="Under Armour icon" loading="lazy" />
+        </div>
+        <div class="exp-text-box">
+          <h3>MyFitnessPal</h3>
+          <p>Hired by the CEO to lead design and research. Over the course of two years we went from 75 million customers to 150 and got acquired by Under Armour.<br><br>We improved customer experience and speed of product development by redesigning web, iOS, and Android to leverage a shared design system. We cleaned up search results, standardized serving sizes, launched new verified nutritional data, restaurant menus, and new recipe import flows. We launched MFP's first paid membership feature set and were one of the original Apple Watch launch partners.<br><br>After Under Armour acquired us along with several other "Connected Fitness" apps we worked together on unified login, standardized components, and a strategic partnership across digital services, hardware, and athletic gear.</p>
+        </div>
+      </div>
+
+      <!-- Uber for Business -->
+      <div class="exp-item" id="uber-b2b">
+        <div class="exp-visual-box">
+          <img class="exp-mockup-img" src="Screen Shot 2022-04-02 at 7.22.57 PM.png" onerror="this.onerror=null; this.src='45d210_b56368e743a9468c95f17042503ddfc5~mv2.avif';" alt="Uber for Business" loading="lazy" />
+          <img class="exp-badge-icon" src="Uber-icon.png" alt="Uber icon" loading="lazy" />
+        </div>
+        <div class="exp-text-box">
+          <h3>Uber For Business</h3>
+          <p>Hired by the Head of Design to run Product Design, Research, and Brand Design for "Uber for Business."<br><br>We built and launched services for employee travel, employee meals, expense integration, company cards, direct billing, commuter benefits, onsite interviews, customer travel, travel vouchers, eats vouchers, event planning, concierge services, catering, and instant policy validation. Our strategy spanned SMB, Enterprise, Municipalities, Universities, Non-profits, and Health Care.</p>
+        </div>
+      </div>
+
+      <!-- Uber Support Strategy -->
+      <div class="exp-item" id="uber-support">
+        <div class="exp-visual-box">
+          <img class="exp-mockup-img" src="Uber Support.png" onerror="this.onerror=null; this.src='45d210_7c6036b45b934b149366088d410e15d5~mv2.avif';" alt="Uber Support Strategy" loading="lazy" />
+          <img class="exp-badge-icon" src="Uber-icon.png" alt="Uber icon" loading="lazy" />
+        </div>
+        <div class="exp-text-box">
+          <h3>Uber Support Strategy</h3>
+          <p>Support is one of the best ways for Uber to differentiate itself from competitors.<br><br>I worked with support agents, support ops, our internal customer relationship management tools team, and executive leadership across all functions and lines of business to surface valuable customer insights. We helped product teams perform root cause analysis and launched a company-wide initiative to reduce product defects.<br><br>We framed the true cost of these customer issues in terms of both operational costs and the severity of their cost to our brand aspirations and our core customer value proposition.<br><br>I built strong partnerships with the people running and working in our Green Light Hubs, Internal Support Centers, External support centers, as well as our internal Safety, Security, and Fraud teams. I also partnered with the VP of our Incident Response Team on initiatives to improve agent wellness. These initiatives helped Uber reduce the cost of support operations and improve customer satisfaction.</p>
+        </div>
+      </div>
+
+      <!-- Uber Workshops -->
+      <div class="exp-item" id="uber-workshops">
+        <div class="exp-visual-box">
+          <img class="exp-mockup-img" src="Ripples.png" onerror="this.onerror=null; this.src='FrequencySeverity (2).png'; this.onerror=function(){this.src='45d210_2167d0cdefbf415f863f9c75f7b633d7~mv2.avif';};" alt="Uber Workshops" loading="lazy" />
+          <img class="exp-badge-icon" src="Uber-icon.png" alt="Uber icon" loading="lazy" />
+        </div>
+        <div class="exp-text-box">
+          <h3>Uber Workshops</h3>
+          <p>While reporting to the VP of Design, I had the chance to help him use design systems to nudge designers' focus away from visual, interaction, and product design to instead think more holistically about the end-to-end customer experience and Service Design.<br><br>My "Frequency Severity Workshop" helped the VPs and executives of PM, Design, Engineering, and Marketing develop a culture of "customer obsession" learning directly from the support agents who have helped thousands of customers through frequent and severe customer experiences.<br><br>My "Ripples Workshop" provided a cross-functional collaborative framework for creating service blueprints of "multisided markets." Where a company is the hub that facilitates the experience of all parties involved.</p>
+        </div>
+      </div>
+
+      <!-- Hover -->
+      <div class="exp-item" id="hover">
+        <div class="exp-visual-box">
+          <img class="exp-mockup-img"
+               src="Hover (4).png"
+               onerror="this.onerror=null; this.src='Hover%20(4).png'; this.onerror=function(){this.src='Hover (2).png'; this.onerror=function(){this.src='Hover (1).png'; this.onerror=function(){this.src='45d210_95d0f573f66549959bdee2491983094c~mv2.avif';};};};"
+               alt="Hover" loading="lazy" />
+          <img class="exp-badge-icon"
+               src="Hover-icon (1).png"
+               onerror="this.onerror=null; this.src='Hover-icon.png';"
+               alt="Hover icon" loading="lazy" />
+        </div>
+        <div class="exp-text-box">
+          <h3>Hover</h3>
+          <p>Hired by the CEO to work on Hover's forward looking mission, purpose, vision, and strategic roadmap.<br><br>I worked cross-functionally with product, engineering, design, research, support, operations, marketing, and sales. We discussed the past insights and inspiration on why people came to Hover and what they want to help Hover achieve.<br><br>We simplified these insights into concise and coherent articulations of why the market needs a better process and marketplace for property improvements.<br><br>We identified the ways Hover can create and provide new value to homeowners, contractors, and insurance companies.<br><br>We created a shared language for evaluating our brand aspirations and the value prop we can offer each side of the market at different phases of homeownership and project management.<br><br>We illustrated the future world of services we aim to offer, identified a roadmap of key projects we'd need to work on, and underscored the importance of investing in our 'foundation' > 'features.'</p>
         </div>
       </div>
     </div>
@@ -967,7 +973,7 @@
   <!-- Full-Bleed Contact Section (Flush Left & Bottom, Vertically Centered) -->
   <section class="section-contact" id="contact">
     <div class="contact-photo-box">
-      <img src="monarch-butterfly-4835194_1920.jpeg" onerror="this.onerror=null;this.src='45d210_1fdd623132e54832b2dc7564e2883f4d~mv2.avif';" alt="Chrysalis" loading="lazy" />
+      <img src="monarch-butterfly-4835194_1920.jpeg" onerror="this.onerror=null; this.src='45d210_1fdd623132e54832b2dc7564e2883f4d~mv2.avif';" alt="Chrysalis" loading="lazy" />
     </div>
     <div class="contact-content-box">
       <h2>How can I help?</h2>
@@ -993,29 +999,6 @@
     function toggleMobileMenu() {
       const menu = document.getElementById('mobileNavOverlay');
       menu.classList.toggle('open');
-    }
-
-    // Bulletproof Hover fallback chain
-    const hoverImg = document.getElementById('hover-mockup-img');
-    if (hoverImg) {
-      const hoverSources = [
-        'Hover (1).png',
-        'Hover%20(1).png',
-        'Hover (2).png',
-        'Hover%20(2).png',
-        'Hover (4).png',
-        'Hover%20(4).png',
-        '45d210_95d0f573f66549959bdee2491983094c~mv2.avif'
-      ];
-      let hIdx = 0;
-      hoverImg.onerror = function() {
-        if (hIdx < hoverSources.length) {
-          hoverImg.src = hoverSources[hIdx++];
-        }
-      };
-      if (hoverImg.complete && hoverImg.naturalWidth === 0) {
-        hoverImg.src = hoverSources[1];
-      }
     }
   </script>
 </body>
