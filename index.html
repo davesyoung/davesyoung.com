@@ -27,7 +27,7 @@
       --bg-white: #ffffff;
       --bg-sage-light: #D5E1DF;
       --bg-slate-dark: #72827F;
-      --bg-contact-gray: #F2F2F2;
+      --bg-contact-gray: #EAEFEF; /* Noticeable, elegant gray that stands out on OLED/mobile displays */
       --bg-footer: #424746;
       
       --text-dark: #2B2B2B;
@@ -53,7 +53,7 @@
       overflow-x: hidden;
     }
 
-    /* Fixed Translucent Header (Matches Wix 80% Alpha on Both Desktop & Mobile) */
+    /* Fixed Translucent Header */
     header.site-header {
       position: fixed;
       top: 0;
@@ -146,12 +146,12 @@
       text-decoration: none;
     }
 
-    /* Split Screen Hero - Starts below fixed header on initial load, scrolls behind it smoothly */
+    /* Split Screen Hero */
     .hero-split {
       display: flex;
       width: 100vw;
       min-height: calc(100vh - 89px);
-      margin-top: 89px; /* Desktop: Content starts below header */
+      margin-top: 89px;
       align-items: stretch;
       margin-bottom: 0;
       padding: 0;
@@ -393,7 +393,6 @@
       margin: 0;
       padding: 0;
     }
-    /* Fixed visual frame crops wide screenshots on the right edge */
     .exp-visual-box {
       position: relative;
       flex: 0 0 clamp(280px, 24vw, 360px);
@@ -410,7 +409,7 @@
       display: block;
     }
 
-    /* Custom alignments matching original Wix */
+    /* Custom alignments */
     #gmaps .exp-mockup-img { object-position: 20% top; }
     #gdocs .exp-mockup-img { object-position: left top; }
     #gpresentations .exp-mockup-img { object-position: left top; }
@@ -420,14 +419,13 @@
     #gtrends .exp-mockup-img { object-position: left top; }
     #gmoderator .exp-mockup-img { object-position: 25% top; }
     #zoodles .exp-mockup-img { object-position: left center; }
-    /* MyFitnessPal: Anchored left so first iPhone screen is shown */
     #mfp .exp-mockup-img { object-fit: cover; object-position: left top !important; }
     #uber-b2b .exp-mockup-img { object-position: left top; }
     #uber-support .exp-mockup-img { object-position: left top; }
     #uber-workshops .exp-mockup-img { object-position: center top; }
     #hover .exp-mockup-img { object-fit: cover; object-position: left top !important; }
 
-    /* App Badges: Clean Inset Sitting Safely Over Image (Never Cut Off) */
+    /* App Badges: Clean Inset */
     .exp-badge-icon {
       position: absolute;
       left: 28px;
@@ -458,7 +456,7 @@
       color: var(--text-muted);
     }
 
-    /* Contact Section (50vw Chrysalis / 50vw #F2F2F2, Flush Left & Bottom) */
+    /* Contact Section (50vw Chrysalis / 50vw Gray Box, Flush Left & Bottom) */
     section.section-contact {
       width: 100vw;
       display: grid;
@@ -565,8 +563,8 @@
         flex-direction: column;
         width: 100%;
         min-height: auto;
-        margin-top: 72px; /* Starts cleanly below fixed header */
-        padding-top: 18px; /* Extra spacing above image so head is never cropped */
+        margin-top: 72px;
+        padding-top: 18px;
         background-color: #ffffff;
       }
       .hero-image-col {
@@ -581,7 +579,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: center top; /* Shows full sky and headroom */
+        object-position: center top;
         display: block;
       }
       .hero-content-col {
@@ -615,7 +613,7 @@
       .exp-grid {
         grid-template-columns: 1fr;
         width: 100%;
-        row-gap: 5.2rem; /* +20% vertical spacing between project sections */
+        row-gap: 5.2rem;
       }
       .exp-item {
         display: flex;
@@ -650,9 +648,11 @@
         padding: 1.5rem 0 0 0;
       }
 
+      /* Distinct Gray Background on Mobile for Contact Section */
       section.section-contact {
         grid-template-columns: 1fr;
         width: 100%;
+        background-color: var(--bg-contact-gray) !important;
       }
       .contact-photo-box {
         width: 100%;
@@ -663,7 +663,8 @@
         width: 100%;
         height: auto;
         min-height: auto;
-        padding: 3rem 1.5rem;
+        padding: 3.5rem 1.5rem 4rem 1.5rem;
+        background-color: var(--bg-contact-gray) !important;
       }
       .contact-details {
         flex-direction: column;
@@ -925,7 +926,7 @@
         </div>
       </div>
 
-      <!-- MyFitnessPal (Starts at x = 50vw - Anchored left to show first screen) -->
+      <!-- MyFitnessPal (Starts at x = 50vw - Anchored left so first screen is shown) -->
       <div class="exp-item" id="mfp">
         <div class="exp-visual-box">
           <img class="exp-mockup-img" src="MFP.png" onerror="this.onerror=null; this.src='45d210_3f2d830e358f4358a7f2313fb75ab6fb~mv2.avif';" alt="MyFitnessPal" loading="lazy" />
@@ -993,7 +994,7 @@
     </div>
   </section>
 
-  <!-- Full-Bleed Contact Section (Flush Left & Bottom, Vertically Centered) -->
+  <!-- Full-Bleed Contact Section (Distinct Gray Box on Desktop & Mobile) -->
   <section class="section-contact" id="contact">
     <div class="contact-photo-box">
       <img src="monarch-butterfly-4835194_1920.jpeg" onerror="this.onerror=null; this.src='45d210_1fdd623132e54832b2dc7564e2883f4d~mv2.avif';" alt="Chrysalis" loading="lazy" />
