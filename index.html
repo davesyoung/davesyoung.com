@@ -146,14 +146,16 @@
       text-decoration: none;
     }
 
-    /* Split Screen Hero - Full 50vw Bleed */
+    /* Split Screen Hero - Starts below fixed header on initial load, scrolls behind it smoothly */
     .hero-split {
       display: flex;
       width: 100vw;
-      min-height: 100vh;
+      min-height: calc(100vh - 89px);
+      margin-top: 89px; /* Desktop: Content starts below header */
       align-items: stretch;
-      margin: 0;
+      margin-bottom: 0;
       padding: 0;
+      background-color: #ffffff;
     }
     .hero-image-col {
       flex: 0 0 50vw;
@@ -177,7 +179,7 @@
     .hero-content-col {
       flex: 0 0 50vw;
       width: 50vw;
-      padding: 160px 5vw 45px 5vw;
+      padding: 60px 5vw 45px 5vw;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
@@ -345,7 +347,7 @@
       color: var(--text-slate-body);
     }
 
-    /* Experience Section (Full-Width 50vw / 50vw Architecture) */
+    /* Experience Section (Full-Width 50vw / 50vw Grid) */
     section.section-experience {
       background-color: var(--bg-white);
       width: 100vw;
@@ -391,7 +393,7 @@
       margin: 0;
       padding: 0;
     }
-    /* Fixed 280-360px visual frame crops wide screenshots on the right edge */
+    /* Fixed visual frame crops wide screenshots on the right edge */
     .exp-visual-box {
       position: relative;
       flex: 0 0 clamp(280px, 24vw, 360px);
@@ -428,8 +430,8 @@
     /* App Badges: Clean Inset Sitting Safely Over Image (Never Cut Off) */
     .exp-badge-icon {
       position: absolute;
-      left: 40px;
-      bottom: 35px;
+      left: 28px;
+      bottom: 28px;
       width: 76px;
       height: 76px;
       background: transparent !important;
@@ -551,7 +553,6 @@
       header.site-header {
         padding: 0 1.5rem;
         height: 72px;
-        /* Translucent header maintained on mobile */
         background-color: rgba(255, 255, 255, 0.8);
         backdrop-filter: blur(5px);
         -webkit-backdrop-filter: blur(5px);
@@ -559,26 +560,29 @@
       nav.header-nav { display: none; }
       .mobile-menu-btn { display: flex; }
 
-      /* Mobile Hero - Starts at top: 0 with sky visible through header, head below header */
+      /* Mobile Hero: Starts below 72px header with 18px white breathing space */
       .hero-split {
         flex-direction: column;
         width: 100%;
         min-height: auto;
-        margin: 0;
-        padding: 0;
+        margin-top: 72px; /* Starts cleanly below fixed header */
+        padding-top: 18px; /* Extra spacing above image so head is never cropped */
+        background-color: #ffffff;
       }
       .hero-image-col {
         width: 100%;
-        height: clamp(400px, 58vh, 480px);
+        height: clamp(360px, 88vw, 440px);
         min-height: auto;
         flex: none;
         overflow: hidden;
+        background: #eef2f2;
       }
       .hero-image-col img.portrait {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: center top; /* Sky shows behind transparent header, head starts below header */
+        object-position: center top; /* Shows full sky and headroom */
+        display: block;
       }
       .hero-content-col {
         width: 100%;
@@ -611,7 +615,7 @@
       .exp-grid {
         grid-template-columns: 1fr;
         width: 100%;
-        row-gap: 4.5rem; /* +20% vertical spacing between project sections */
+        row-gap: 5.2rem; /* +20% vertical spacing between project sections */
       }
       .exp-item {
         display: flex;
@@ -637,7 +641,7 @@
       }
       .exp-badge-icon {
         left: 20px;
-        bottom: 25px;
+        bottom: 20px;
         width: 68px;
         height: 68px;
       }
@@ -921,7 +925,7 @@
         </div>
       </div>
 
-      <!-- MyFitnessPal (Starts at x = 50vw - Anchored left so first iPhone screen is shown) -->
+      <!-- MyFitnessPal (Starts at x = 50vw - Anchored left to show first screen) -->
       <div class="exp-item" id="mfp">
         <div class="exp-visual-box">
           <img class="exp-mockup-img" src="MFP.png" onerror="this.onerror=null; this.src='45d210_3f2d830e358f4358a7f2313fb75ab6fb~mv2.avif';" alt="MyFitnessPal" loading="lazy" />
