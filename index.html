@@ -39,8 +39,6 @@
       --accent-gold: #FEAA16;
       --line-sage: #72827F;
       --line-slate: #A3B8B4;
-      
-      --site-width: 980px;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -148,7 +146,7 @@
       text-decoration: none;
     }
 
-    /* Split Screen Hero - Full 50vw Bleed, Stretches Flush to Next Section */
+    /* Split Screen Hero - Full 50vw Bleed */
     .hero-split {
       display: flex;
       width: 100vw;
@@ -241,15 +239,15 @@
     section.section-help {
       background-color: var(--bg-sage-light);
       width: 100vw;
-      padding: 5.5rem 2rem;
+      padding: 5.5rem 4vw;
       margin: 0;
     }
     .help-wrap {
-      max-width: var(--site-width);
+      max-width: 1280px;
       margin: 0 auto;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 40px;
+      gap: 5vw;
       width: 100%;
     }
     .section-title-bar {
@@ -294,15 +292,15 @@
       background-color: var(--bg-slate-dark);
       color: var(--text-slate-body);
       width: 100vw;
-      padding: 5.5rem 2rem 6.5rem 2rem;
+      padding: 5.5rem 4vw 6.5rem 4vw;
       margin: 0;
     }
     .services-wrap {
-      max-width: var(--site-width);
+      max-width: 1280px;
       margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
+      gap: 3.5vw;
       width: 100%;
     }
     .service-col {
@@ -346,15 +344,15 @@
       color: var(--text-slate-body);
     }
 
-    /* Experience Section (Centered 980px Container Matching Original Wix) */
+    /* Experience Section (Edge-to-Edge Desktop Frame with Cropped Mockups) */
     section.section-experience {
       background-color: var(--bg-white);
       width: 100vw;
-      padding: 6rem 1.5rem 4rem 1.5rem;
+      padding: 6rem 4vw 4rem 4vw;
       margin: 0;
     }
     .exp-wrap {
-      max-width: var(--site-width);
+      max-width: 1320px;
       margin: 0 auto;
       width: 100%;
     }
@@ -381,32 +379,52 @@
       color: var(--accent-gold);
     }
 
-    /* 2 Columns inside 980px with a 40px gap */
+    /* 2 Large Columns on Desktop */
     .exp-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 4rem 40px;
+      gap: 4.5rem 4vw;
       width: 100%;
     }
     .exp-item {
-      display: grid;
-      grid-template-columns: 210px 1fr;
-      align-items: start;
-      gap: 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 22px;
     }
+    /* Fixed 280px frame with 420px height crops wide screenshots on the right */
     .exp-visual-box {
       position: relative;
-      display: flex;
-      justify-content: center;
-      width: 210px;
+      flex: 0 0 clamp(250px, 20vw, 290px);
+      width: clamp(250px, 20vw, 290px);
+      height: clamp(380px, 30vw, 440px);
+      overflow: hidden;
+      background: transparent;
     }
     .exp-mockup-img {
       width: 100%;
-      height: auto;
-      max-height: 400px;
-      object-fit: contain;
+      height: 100%;
+      object-fit: cover;
+      object-position: left top;
       display: block;
     }
+
+    /* Custom object alignments matching original Wix framing */
+    #gmaps .exp-mockup-img { object-position: center top; }
+    #gdocs .exp-mockup-img { object-position: left top; }
+    #gpresentations .exp-mockup-img { object-position: left top; }
+    #gdrive .exp-mockup-img { object-position: left top; }
+    #gmail .exp-mockup-img { object-position: left top; }
+    #gcontacts .exp-mockup-img { object-position: left top; }
+    #gtrends .exp-mockup-img { object-position: left top; }
+    #gmoderator .exp-mockup-img { object-position: 22% top; }
+    #zoodles .exp-mockup-img { object-position: left center; }
+    #mfp .exp-mockup-img { object-position: center top; object-fit: contain; }
+    #uber-b2b .exp-mockup-img { object-position: left top; }
+    #uber-support .exp-mockup-img { object-position: left top; }
+    #uber-workshops .exp-mockup-img { object-position: center top; }
+    #hover .exp-mockup-img { object-position: center top; object-fit: contain; }
+
+    /* Transparent Badges */
     .exp-badge-icon {
       position: absolute;
       bottom: -15px;
@@ -421,6 +439,7 @@
       pointer-events: none;
     }
     .exp-text-box {
+      flex: 1;
       padding-top: 0.25rem;
     }
     .exp-text-box h3 {
@@ -472,7 +491,7 @@
       padding: 3rem 6vw 3rem 5vw;
       display: flex;
       flex-direction: column;
-      justify-content: center; /* True Vertical Centering */
+      justify-content: center;
     }
     .contact-content-box h2 {
       font-size: 24px;
@@ -580,19 +599,21 @@
       }
       .exp-visual-box {
         width: 100%;
-        display: flex;
-        justify-content: center;
+        height: auto;
+        max-height: 360px;
+        overflow: hidden;
       }
       .exp-mockup-img {
         width: 100%;
-        max-width: 320px;
-        max-height: none;
+        height: 100%;
+        max-height: 360px;
+        object-fit: contain;
       }
       .exp-badge-icon {
         left: 10px;
         bottom: -15px;
-        width: 72px;
-        height: 72px;
+        width: 64px;
+        height: 64px;
       }
       .exp-text-box {
         width: 100%;
@@ -755,7 +776,7 @@
     </div>
   </section>
 
-  <!-- Experience Section (Centered 980px Desktop Container) -->
+  <!-- Experience Section -->
   <section class="section-experience" id="experience">
     <div class="exp-wrap">
       <div class="exp-header-wrap">
@@ -770,7 +791,7 @@
         <!-- Google Maps -->
         <div class="exp-item" id="gmaps">
           <div class="exp-visual-box">
-            <img class="exp-mockup-img" src="Maps-bg.png" alt="Google Maps" loading="lazy" />
+            <img class="exp-mockup-img" src="Maps-bg.png" onerror="this.onerror=null; this.src='45d210_4477b1a5802d4e159ca56eb9fea36e69~mv2.avif';" alt="Google Maps" loading="lazy" />
             <img class="exp-badge-icon" src="Maps-icon.png" alt="Maps icon" loading="lazy" />
           </div>
           <div class="exp-text-box">
@@ -782,7 +803,7 @@
         <!-- Google Docs -->
         <div class="exp-item" id="gdocs">
           <div class="exp-visual-box">
-            <img class="exp-mockup-img" src="Screen Shot 2022-04-01 at 12.03.25 PM.png" onerror="this.onerror=null;this.src='docs.png';" alt="Google Docs" loading="lazy" />
+            <img class="exp-mockup-img" src="Screen Shot 2022-04-01 at 12.03.25 PM.png" onerror="this.onerror=null; this.src='docs.png'; this.onerror=function(){this.src='45d210_9044418ec07543a39dfdd5b224b1d0df~mv2.avif';};" alt="Google Docs" loading="lazy" />
             <img class="exp-badge-icon" src="docs.png" alt="Docs icon" loading="lazy" />
           </div>
           <div class="exp-text-box">
@@ -794,7 +815,7 @@
         <!-- Google Presentations -->
         <div class="exp-item" id="gpresentations">
           <div class="exp-visual-box">
-            <img class="exp-mockup-img" src="Screen Shot 2022-04-01 at 12.04.39 PM.png" onerror="this.onerror=null;this.src='Screen Shot 2022-04-01 at 8.57.36 PM.png';" alt="Google Presentations" loading="lazy" />
+            <img class="exp-mockup-img" src="Screen Shot 2022-04-01 at 12.04.39 PM.png" onerror="this.onerror=null; this.src='Screen Shot 2022-04-01 at 8.57.36 PM.png'; this.onerror=function(){this.src='45d210_e883d058f918463e8f2165d1d9f91ab1~mv2.avif';};" alt="Google Presentations" loading="lazy" />
             <img class="exp-badge-icon" src="Presentations-icon.png" alt="Presentations icon" loading="lazy" />
           </div>
           <div class="exp-text-box">
@@ -806,7 +827,7 @@
         <!-- Google Drive -->
         <div class="exp-item" id="gdrive">
           <div class="exp-visual-box">
-            <img class="exp-mockup-img" src="drive.jpeg" alt="Google Drive" loading="lazy" />
+            <img class="exp-mockup-img" src="drive.jpeg" onerror="this.onerror=null; this.src='45d210_5de8beac771d4866bec71f056eb92f8e~mv2.avif';" alt="Google Drive" loading="lazy" />
             <img class="exp-badge-icon" src="Drive-icon.png" alt="Drive icon" loading="lazy" />
           </div>
           <div class="exp-text-box">
@@ -818,7 +839,7 @@
         <!-- Gmail -->
         <div class="exp-item" id="gmail">
           <div class="exp-visual-box">
-            <img class="exp-mockup-img" src="Gmail (1).png" alt="Gmail" loading="lazy" />
+            <img class="exp-mockup-img" src="Gmail (1).png" onerror="this.onerror=null; this.src='45d210_a4e3a19d274b418a84f97a4a5109735e~mv2.avif';" alt="Gmail" loading="lazy" />
             <img class="exp-badge-icon" src="Presentations-icon (1).png" alt="Gmail icon" loading="lazy" />
           </div>
           <div class="exp-text-box">
@@ -830,7 +851,7 @@
         <!-- Google Contacts -->
         <div class="exp-item" id="gcontacts">
           <div class="exp-visual-box">
-            <img class="exp-mockup-img" src="Contacts.png" onerror="this.onerror=null;this.src='Contacts (1).png';" alt="Google Contacts" loading="lazy" />
+            <img class="exp-mockup-img" src="Contacts.png" onerror="this.onerror=null; this.src='Contacts (1).png'; this.onerror=function(){this.src='45d210_327d7ce91bb047d4ab53f09d6acb2d02~mv2.avif';};" alt="Google Contacts" loading="lazy" />
             <img class="exp-badge-icon" src="Google_Contacts_icon_svg.png" alt="Contacts icon" loading="lazy" />
           </div>
           <div class="exp-text-box">
@@ -842,8 +863,8 @@
         <!-- Google Trends -->
         <div class="exp-item" id="gtrends">
           <div class="exp-visual-box">
-            <img class="exp-mockup-img" src="Trends.png" alt="Google Trends" loading="lazy" />
-            <img class="exp-badge-icon" src="Trends-icon.png" onerror="this.onerror=null;this.src='Trends-icon (1).png';" alt="Trends icon" loading="lazy" />
+            <img class="exp-mockup-img" src="Trends.png" onerror="this.onerror=null; this.src='45d210_bf806afdaeaa4987af4da93d35496550~mv2.avif';" alt="Google Trends" loading="lazy" />
+            <img class="exp-badge-icon" src="Trends-icon.png" onerror="this.onerror=null; this.src='Trends-icon (1).png';" alt="Trends icon" loading="lazy" />
           </div>
           <div class="exp-text-box">
             <h3>Google Trends</h3>
@@ -854,7 +875,7 @@
         <!-- Google Moderator -->
         <div class="exp-item" id="gmoderator">
           <div class="exp-visual-box">
-            <img class="exp-mockup-img" src="Screen Shot 2022-04-01 at 10.58.46 PM.png" alt="Google Moderator" loading="lazy" />
+            <img class="exp-mockup-img" src="Screen Shot 2022-04-01 at 10.58.46 PM.png" onerror="this.onerror=null; this.src='45d210_379aa093378d4c5ca3590ab7c5be34a4~mv2.avif';" alt="Google Moderator" loading="lazy" />
             <img class="exp-badge-icon" src="Moderator-icon.png" alt="Dory icon" loading="lazy" />
           </div>
           <div class="exp-text-box">
@@ -866,7 +887,7 @@
         <!-- Zoodles -->
         <div class="exp-item" id="zoodles">
           <div class="exp-visual-box">
-            <img class="exp-mockup-img" src="Kid Mode.png" alt="Zoodles Kid Mode" loading="lazy" />
+            <img class="exp-mockup-img" src="Kid Mode.png" onerror="this.onerror=null; this.src='45d210_46a320260d4a4a6cac0f2640c8755aa4~mv2.avif';" alt="Zoodles Kid Mode" loading="lazy" />
             <img class="exp-badge-icon" src="KidMode-icon (1).png" alt="KidMode icon" loading="lazy" />
           </div>
           <div class="exp-text-box">
@@ -878,7 +899,7 @@
         <!-- MyFitnessPal -->
         <div class="exp-item" id="mfp">
           <div class="exp-visual-box">
-            <img class="exp-mockup-img" src="MFP.png" alt="MyFitnessPal" loading="lazy" />
+            <img class="exp-mockup-img" src="MFP.png" onerror="this.onerror=null; this.src='45d210_3f2d830e358f4358a7f2313fb75ab6fb~mv2.avif';" alt="MyFitnessPal" loading="lazy" />
             <img class="exp-badge-icon" src="Moderator-icon (1).png" alt="Under Armour icon" loading="lazy" />
           </div>
           <div class="exp-text-box">
@@ -890,7 +911,7 @@
         <!-- Uber for Business -->
         <div class="exp-item" id="uber-b2b">
           <div class="exp-visual-box">
-            <img class="exp-mockup-img" src="Screen Shot 2022-04-02 at 7.22.57 PM.png" alt="Uber for Business" loading="lazy" />
+            <img class="exp-mockup-img" src="Screen Shot 2022-04-02 at 7.22.57 PM.png" onerror="this.onerror=null; this.src='45d210_b56368e743a9468c95f17042503ddfc5~mv2.avif';" alt="Uber for Business" loading="lazy" />
             <img class="exp-badge-icon" src="Uber-icon.png" alt="Uber icon" loading="lazy" />
           </div>
           <div class="exp-text-box">
@@ -902,7 +923,7 @@
         <!-- Uber Support Strategy -->
         <div class="exp-item" id="uber-support">
           <div class="exp-visual-box">
-            <img class="exp-mockup-img" src="Uber Support.png" alt="Uber Support Strategy" loading="lazy" />
+            <img class="exp-mockup-img" src="Uber Support.png" onerror="this.onerror=null; this.src='45d210_7c6036b45b934b149366088d410e15d5~mv2.avif';" alt="Uber Support Strategy" loading="lazy" />
             <img class="exp-badge-icon" src="Uber-icon.png" alt="Uber icon" loading="lazy" />
           </div>
           <div class="exp-text-box">
@@ -914,10 +935,7 @@
         <!-- Uber Workshops -->
         <div class="exp-item" id="uber-workshops">
           <div class="exp-visual-box">
-            <img class="exp-mockup-img"
-                 src="Ripples.png"
-                 onerror="this.onerror=null; this.src='FrequencySeverity (2).png'; this.onerror=function(){this.src='45d210_2167d0cdefbf415f863f9c75f7b633d7~mv2.avif';};"
-                 alt="Uber Workshops" loading="lazy" />
+            <img class="exp-mockup-img" src="Ripples.png" onerror="this.onerror=null; this.src='FrequencySeverity (2).png'; this.onerror=function(){this.src='45d210_2167d0cdefbf415f863f9c75f7b633d7~mv2.avif';};" alt="Uber Workshops" loading="lazy" />
             <img class="exp-badge-icon" src="Uber-icon.png" alt="Uber icon" loading="lazy" />
           </div>
           <div class="exp-text-box">
@@ -929,13 +947,12 @@
         <!-- Hover -->
         <div class="exp-item" id="hover">
           <div class="exp-visual-box">
-            <img class="exp-mockup-img"
+            <img class="exp-mockup-img" id="hover-mockup-img"
                  src="Hover (1).png"
-                 onerror="this.onerror=null; this.src='Hover%20(1).png'; this.onerror=function(){this.src='Hover (2).png'; this.onerror=function(){this.src='Hover (4).png'; this.onerror=function(){this.src='45d210_95d0f573f66549959bdee2491983094c~mv2.avif'; this.onerror=function(){this.src='https://static.wixstatic.com/media/45d210_95d0f573f66549959bdee2491983094c~mv2.jpg/v1/fill/w_480,h_700,al_c,q_85/hover.jpg';};};};};"
                  alt="Hover" loading="lazy" />
             <img class="exp-badge-icon"
                  src="Hover-icon (1).png"
-                 onerror="this.onerror=null; this.src='Hover-icon.png'; this.onerror=function(){this.src='Hover-icon (1).avif';};"
+                 onerror="this.onerror=null; this.src='Hover-icon.png';"
                  alt="Hover icon" loading="lazy" />
           </div>
           <div class="exp-text-box">
@@ -976,6 +993,29 @@
     function toggleMobileMenu() {
       const menu = document.getElementById('mobileNavOverlay');
       menu.classList.toggle('open');
+    }
+
+    // Bulletproof Hover fallback chain
+    const hoverImg = document.getElementById('hover-mockup-img');
+    if (hoverImg) {
+      const hoverSources = [
+        'Hover (1).png',
+        'Hover%20(1).png',
+        'Hover (2).png',
+        'Hover%20(2).png',
+        'Hover (4).png',
+        'Hover%20(4).png',
+        '45d210_95d0f573f66549959bdee2491983094c~mv2.avif'
+      ];
+      let hIdx = 0;
+      hoverImg.onerror = function() {
+        if (hIdx < hoverSources.length) {
+          hoverImg.src = hoverSources[hIdx++];
+        }
+      };
+      if (hoverImg.complete && hoverImg.naturalWidth === 0) {
+        hoverImg.src = hoverSources[1];
+      }
     }
   </script>
 </body>
